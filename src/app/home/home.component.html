@@ -1,0 +1,16 @@
+<div class="w-full h-full">
+    <mat-slide-toggle #meat [checked]="true" color="accent">Meat</mat-slide-toggle>
+    <mat-slide-toggle #vegetarian [checked]="true" color="accent">Vegetarian</mat-slide-toggle>
+    <mat-slide-toggle #vegan [checked]="true" color="accent">Vegan</mat-slide-toggle>
+
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
+    </mat-form-field>
+
+    <app-recipe-table
+        [meat]="meat.checked"
+        [vegetarian]="vegetarian.checked"
+        [vegan]="vegan.checked"
+        [filterValue]="filter"></app-recipe-table>
+</div>

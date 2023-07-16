@@ -1,1 +1,14 @@
-<p>recipe-table works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let recipe">{{ recipe.name }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+        class="selectable-row"
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="clickRow(row)"></tr>
+</table>
