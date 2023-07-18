@@ -17,11 +17,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "src/*.{js,ts}": [
       "eslint --fix",
       "git add"
     ],
-    "*.{html,less,ejs, css}": [
+    "src/*.{html,less,ejs, css}": [
       "eslint --fix",
       "git add"
     ]

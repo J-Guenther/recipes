@@ -1,1 +1,24 @@
-<p>recipe-dialog works!</p>
+<h1 class="p-5">{{ recipe.name }}</h1>
+<mat-dialog-content class="mat-typography">
+    <h2>Zutaten</h2>
+    <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient }}
+        </li>
+    </ul>
+    <h2>Zubereitung</h2>
+    <ol>
+        <li *ngFor="let cookingStep of recipe.cookingSteps">
+            {{ cookingStep }}
+        </li>
+    </ol>
+    <div *ngIf="recipe?.notes">
+        <h2>Notizen</h2>
+        <p>{{ recipe.notes }}</p>
+    </div>
+    <h2>Quelle</h2>
+    <a [href]="recipe.source">{{ recipe.source }}</a>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close color="primary">Close</button>
+</mat-dialog-actions>

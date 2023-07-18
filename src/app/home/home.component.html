@@ -1,16 +1,38 @@
-<div class="w-full h-full">
-    <mat-slide-toggle #meat [checked]="true" color="accent">Meat</mat-slide-toggle>
-    <mat-slide-toggle #vegetarian [checked]="true" color="accent">Vegetarian</mat-slide-toggle>
-    <mat-slide-toggle #vegan [checked]="true" color="accent">Vegan</mat-slide-toggle>
-
-    <mat-form-field>
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
-    </mat-form-field>
-
-    <app-recipe-table
-        [meat]="meat.checked"
-        [vegetarian]="vegetarian.checked"
-        [vegan]="vegan.checked"
-        [filterValue]="filter"></app-recipe-table>
+<div class="w-full h-full flex flex-col">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span>Coole Rezepte</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="p-4 grow">
+        <div class="text-center pt-8">
+            <mat-form-field class="w-full">
+                <mat-label>Suche</mat-label>
+                <input
+                    matInput
+                    (keyup)="applyFilter($event)"
+                    placeholder="Rezeptname eingeben..." />
+            </mat-form-field>
+        </div>
+        <div class="flex flex-col md:flex-row w-full md:justify-between">
+            <div class="basis-1/3 text-center md:p-0 p-3">
+                <mat-slide-toggle #meat [checked]="true" color="accent">Meat</mat-slide-toggle>
+            </div>
+            <div class="basis-1/3 text-center md:p-0 p-3">
+                <mat-slide-toggle #vegetarian [checked]="true" color="accent"
+                    >Vegetarian</mat-slide-toggle
+                >
+            </div>
+            <div class="basis-1/3 text-center md:p-0 p-3">
+                <mat-slide-toggle #vegan [checked]="true" color="accent">Vegan</mat-slide-toggle>
+            </div>
+        </div>
+        <div class="pt-6">
+            <app-recipe-table
+                [meat]="meat.checked"
+                [vegetarian]="vegetarian.checked"
+                [vegan]="vegan.checked"
+                [filterValue]="filter"></app-recipe-table>
+        </div>
+    </div>
 </div>

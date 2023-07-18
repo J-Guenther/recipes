@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Hummus",
+        "ingredients": [
+            "2-3 Knoblauchzehen",
+            "5 EL Olivenöl",
+            "3 EL Tahini",
+            "300-400g Kichererbsen (vorgekocht)",
+            "1-2 Biozitrone",
+            "1 EL Aquafaba (Kochwasser von Kichererbsen)",
+            "1 TL Kreuzkümmel",
+            "1 Prise Salz"
+        ],
+        "cookingSteps": [
+            "Kichererbsen, Aquafaba, Kreuzkümmel, Salz, Olivenöl und Tahini in eine Schüssel",
+            "Biozitrone auspressen und Saft dazugeben",
+            "Knoblauchzehen reinreiben",
+            "Alles pürieren"
+        ],
+        "notes": "",
+        "source": "https://youtu.be/vUp9zD_QsfI?t=265",
+        "type": "Vegan"
+    },
+    {
+        "name": "Marcos Kichererbsen-Burger",
+        "ingredients": [
+            "1 Dose Kichererbsen",
+            "1 Kleine Zwiebel",
+            "1 Knoblauchzehe",
+            "1 EL Mehl",
+            "Salz und Pfeffer",
+            "Provence Kräuter",
+            "Brot für Burger"
+
+        ],
+        "cookingSteps": [
+            "Zwiebel und Knoblauch kleinhacken und in Schüssel geben",
+            "Kichererbsen abtropfen und dazu",
+            "1 EL Mehl (bei Bedarf mehr)",
+            "Salzen und Pfeffern",
+            "Provence-Kräuter richtig gut viel",
+            "Mit Kartoffelstampfer den Mist zerstampfen",
+            "Buletten formen (reicht für genau 2)",
+            "Anbraten und Burger bauen"
+        ],
+        "notes": "",
+        "source": "",
+        "type": "Vegan"
+    }
+]

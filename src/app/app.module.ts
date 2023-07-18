@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { RecipeDialogComponent } from './recipe-dialog/recipe-dialog.component'
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
+import { MatButtonModule } from '@angular/material/button'
+import { MatToolbarModule } from '@angular/material/toolbar'
 
 @NgModule({
     declarations: [AppComponent, RecipeTableComponent, HomeComponent, RecipeDialogComponent],
@@ -23,7 +25,9 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
         MatTableModule,
         MatCardModule,
         MatSlideToggleModule,
-        MatDialogModule
+        MatDialogModule,
+        MatButtonModule,
+        MatToolbarModule
     ],
     providers: [{ provide: MatDialogRef, useValue: {} }],
     bootstrap: [AppComponent]
