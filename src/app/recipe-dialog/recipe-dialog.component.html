@@ -17,7 +17,7 @@
         <p>{{ recipe.notes }}</p>
     </div>
     <h2>Quelle</h2>
-    <a [href]="recipe.source">{{ recipe.source }}</a>
+    <a [href]="recipe.source" target="_blank" rel="noopener noreferrer">{{ recipe.source }}</a>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-flat-button mat-dialog-close color="primary">Close</button>
