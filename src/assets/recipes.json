@@ -46,5 +46,39 @@
         "notes": "",
         "source": "",
         "type": "Vegan"
+    },
+    {
+        "name": "Teriyaki Tofu",
+        "ingredients": [
+            "Packung Tofu",
+            "1 Frühlingszwiebel",
+            "1 Zwiebel",
+            "3 EL Sojasauce",
+            "2 EL Mirin",
+            "1 EL Sesamöl",
+            "1 EL Rohrzucker (braun)",
+            "1 EL Stärke (wird in warmen Wasser aufgelöst)",
+            "120 ml Wasser",
+            "1-2 cm Ingwer"
+        ],
+        "cookingSteps": [
+            "Tofu ausdrücken",
+            "1-2 EL Stärke für Tofuwürfel",
+            "Tofu anbraten i nErdnussöl",
+            "2 Frühlingszwiebeln schneiden",
+            "Zwiebel in Ringe schneiden",
+            "Tofu raus aus Pfanne",
+            "Dann Zwiebeln anbraten und Ingwer dazu reinreiben",
+            "3 EL Sojasauce dazu",
+            "2 EL Mirin dazu",
+            "1 EL Rohrzucker dazu",
+            "1 EL Sesamöl dazu",
+            "120ml warmes Wasser 1 EL Stärke auflösen und dazu",
+            "Leicht eindicken lassen, Tofu und Frühlingszwiebeln dazu und vermischen",
+            "Beim servieren noch ein paar tropfen sesamöl auf Reis"
+        ],
+        "notes": "opt. Sesamkörner und opt. Sriracha Sauce",
+        "source": "https://youtu.be/q50DMniANXc",
+        "type": "Vegan"
     }
 ]
