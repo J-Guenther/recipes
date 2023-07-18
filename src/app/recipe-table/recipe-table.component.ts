@@ -87,7 +87,8 @@ export class RecipeTableComponent implements OnInit {
 
     clickRow(row: Recipe) {
         this.dialog.open(RecipeDialogComponent, {
-            data: row
+            data: row,
+            autoFocus: false
         })
     }
 }
