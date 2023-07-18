@@ -80,5 +80,42 @@
         "notes": "opt. Sesamkörner und opt. Sriracha Sauce",
         "source": "https://youtu.be/q50DMniANXc",
         "type": "Vegan"
+    },
+    {
+        "name": "Buddy Topf",
+        "ingredients": [
+            "1 Dose Kidney-Bohnen",
+            "1 Dose schwarze Bohnen",
+            "1 Dose weiße Bohnen",
+            "400g Cabanossi",
+            "750g Rinderhack",
+            "3 Jalapeños",
+            "200 g Bacon-Würfel",
+            "3 große Zwiebeln",
+            "1 kg Tomaten",
+            "brauner Zucker",
+            "Staudensellerie",
+            "20 Champignons",
+            "10 Knoblauchzehen",
+            "200g frisch geriebener Parmesan",
+            "Salz",
+            "brauner Zucker zum karamellisieren der Zwiebeln",
+            "schwarzer Pfeffer",
+            "Cayenne Pfeffer",
+            "Paprikapulver",
+            "Weißwein",
+            "Wasser",
+            "Bier"
+
+        ],
+        "cookingSteps": [
+            "Fleisch, Zwiebeln und Pilze scharf anbraten.",
+            "Mit Bier oder Wasser ablöschen",
+            "Dann alle Zutaten außer die Nudeln ca. 20 - 25 Minuten bei mittlerer Hitze dutchen",
+            "Nudeln und ggf. Flüssigkeit (Wasser oder Weißwein) zugeben, ca. 15 - 20 Minuten zu Ende dutchen."
+        ],
+        "notes": "",
+        "source": "https://www.youtube.com/watch?v=mYlasHOI87Q&ab_channel=Grillshow",
+        "type": "Meat"
     }
 ]
