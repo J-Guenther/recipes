@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Recipe } from './recipe'
 import { lastValueFrom } from 'rxjs'
+import { environment } from '../../environments/environment'
 
 @Injectable({
     providedIn: 'root'
 })
 export class RecipeService {
-    private URL = '../../assets/recipes.json'
+    private URL = '../../' + environment.jsonPath
     constructor(private httpClient: HttpClient) {}
 
     async getRecipes() {
