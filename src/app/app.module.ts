@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { NgModule, isDevMode } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
 import { AppComponent } from './app.component'
@@ -13,7 +13,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { RecipeDialogComponent } from './recipe-dialog/recipe-dialog.component'
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
 import { MatButtonModule } from '@angular/material/button'
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 @NgModule({
     declarations: [AppComponent, RecipeTableComponent, HomeComponent, RecipeDialogComponent],
@@ -27,7 +28,13 @@ import { MatToolbarModule } from '@angular/material/toolbar'
         MatSlideToggleModule,
         MatDialogModule,
         MatButtonModule,
-        MatToolbarModule
+        MatToolbarModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: !isDevMode(),
+          // Register the ServiceWorker as soon as the application is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     providers: [{ provide: MatDialogRef, useValue: {} }],
     bootstrap: [AppComponent]
