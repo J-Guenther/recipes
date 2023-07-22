@@ -1,6 +1,6 @@
 {
-  "name": "Coole Rezepte",
-  "short_name": "Recipes",
+  "name": "recipes",
+  "short_name": "recipes",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
