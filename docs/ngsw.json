@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1690056585494,
+  "timestamp": 1690235678243,
   "index": "/recipes/index.html",
   "assetGroups": [
     {
@@ -53,12 +53,12 @@
     "/recipes/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/recipes/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "/recipes/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "/recipes/assets/recipes.json": "542d3a6b4394c9069336b6beb275ca60c061aeb9",
+    "/recipes/assets/recipes.json": "8390461310d255579e62d5569c579f00b555ea7b",
     "/recipes/assets/recipes.md": "7719ffabba8c94710c4526bebc5648fa57389b77",
     "/recipes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/recipes/index.html": "ce0c00d06792fe5065f8007d8501ac41e4a66771",
     "/recipes/main.43021c9568b7e700.js": "0b816f8e74dc6d1472e46bbcf2e9e6dde7764192",
-    "/recipes/manifest.webmanifest": "17753ba9a15469d300c5b8b0788a0f8641c1bd2f",
+    "/recipes/manifest.webmanifest": "1ebfccc5be1eb5ecd687d664010f41273694400e",
     "/recipes/polyfills.db6ea45aedfee9ec.js": "6b23d4fe1cb2238f01687e81d1bcbe1947f8a645",
     "/recipes/runtime.dd203d66ed059e99.js": "d735543189d2c516b094c1ac6b2def2daafaacba",
     "/recipes/styles.785df645b9164c18.css": "ad45e055201a0a12433e51ee52df9d74492a64f3"

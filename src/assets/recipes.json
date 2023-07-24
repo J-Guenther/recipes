@@ -117,5 +117,108 @@
         "notes": "",
         "source": "https://www.youtube.com/watch?v=mYlasHOI87Q&ab_channel=Grillshow",
         "type": "Meat"
+    },
+    {
+        "name": "Pasta mit weißem Pesto",
+        "ingredients": [
+            "12 Walnüsse",
+            "500g Spaghetti",
+            "115g Ricotta",
+            "2 TL Oregano",
+            "56 Parmigiano Reggiano",
+            "1 Bio-Zitrone",
+            "1 Knoblauchzehe",
+            "Salz und Pfeffer",
+            "Olivenöl"
+
+        ],
+        "cookingSteps": [
+            "Ofen auf 175 Grad vorheizen",
+            "12 Walnüsse 5 Minuten im Ofen rösten",
+            "Generously salted (quarter Cup) Water zum kochen bringen, wenn es kocht, dann Nudeln rein (9 Minuten! Nicht overcooken)",
+            "115g Ricotta in Schüssel",
+            "56 gramm Parmesa in Schüssel reiben",
+            "2 Teelöffel Oregano in Schüssel",
+            "Walnüsse kleinhacken und in Schüssel geben",
+            "1/2 - 3/4 Zitronenschale in Schüssel reiben (bis Zitrone weiss wird)",
+            "1 Knoblauchzehe in Schüssel reiben",
+            "Alles mischen",
+            "Dann 60 ml Olivenöl dazugeben und wieder mischen. Nicht aufeinmal dazugeben, ein Esslöffel, dann mischen, dann ein Esslöffel usw.",
+            "Pfeffer dazu",
+            "1-2 Kellen heisses Pastawasser dazugeben",
+            "Nudeln in Schüssel geben",
+            "Dann 2 Minuten Nudeln in Schüssel drehen",
+            "Wenn es zu dick wird, etwas Nudelwasser dazu",
+            "Pepper dazu",
+            "Servieren mit Parmesan"
+        ],
+        "notes": "",
+        "source": "https://youtu.be/uPKj_6-ZezQ",
+        "type": "Vegetarian"
+    },
+    {
+        "name": "Thai-Curry mit Tofu",
+        "ingredients": [
+            "200g Tofu",
+            "Stärke",
+            "Kokosfett",
+            "TK Brokkolie und 1 rote Paprika",
+            "1 große Zwiebel",
+            "2x Knoblauchzehen",
+            "Rote Currypaste",
+            "400ml Kokosmilch",
+            "Limette",
+            "Optional: Chili"
+        ],
+        "cookingSteps": [
+            "Tofu auspressen",
+            "Würfeln",
+            "in 1 EL Stärke wenden",
+            "Anbraten in 1EL  Kokosfett bis es knusprig ist",
+            "Beiseite stellen",
+            "Brokkoli und Paprika schneiden",
+            "in Kokosöl Paprika und Brokkolie anbraten",
+            "nach 2 Minuten Zwiebeln und 2x Knoblauch gewürfelt reingeben",
+            "2-3 EL rote Currypaste",
+            "nach 1 Minute Kokosmilch",
+            "Am Ende Tofu in Pfanne und bisschen Limette und Chilli dazu"
+        ],
+        "notes": "",
+        "source": "https://youtu.be/RGH8DUtGguY",
+        "type": "Vegan"
+    },
+    {
+        "name": "Kichererbsen-Curry",
+        "ingredients": [
+            "1 Zwiebel",
+            "3 Knoblauchzehen",
+            "Daumengroßer geschälter Ingwer",
+            "1 EL Currypulver",
+            "1 rote Paprika",
+            "1 Dose Kichererbsen",
+            "1 Dose passierte Tomaten",
+            "400ml Kokosmilch",
+            "125ml Water",
+            "Salz",
+            "Petersilie",
+            "Limettensaft",
+            "Agavendicksaft",
+            "Olivenöl"
+        ],
+        "cookingSteps": [
+            "Fry Zwiebel, Knoblauch und Ingwer in some oil for 5 mins",
+            "1 EL Currypulver dazu",
+            "Geschnitte Paprika dazu und kurz anbraten",
+            "1 Dose gekochte Kichererbsen dazu",
+            "passierte Tomaten dazu",
+            "Kokomilch dazu",,
+            "Wasser dazu",
+            "Salzen nach Bedarf",
+            "10 min köcheln lassen",
+            "Am Ende mit Limettensaft, Petersilie und wenig Agavendicksaft (1TL) verfeinern",
+        ],
+        "notes": "",
+        "source": "",
+        "type": "Vegan"
     }
 ]
