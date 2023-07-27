@@ -220,5 +220,37 @@
         "notes": "",
         "source": "",
         "type": "Vegan"
+    },
+    {
+        "name": "Wassermelonen-Feta-Salat",
+        "ingredients": [
+            "150g gemischer Salat",
+            "1/4 Wassermelone (ca. 500g)",
+            "150g Feta Käse",
+            "1 TL Honig",
+            "1 TL Scharfer Senf",
+            "2 EL heller Balsamico Essig",
+            "2 EL Zitronensaft",
+            "4 EL Olivenöl",
+            "Chiliflocken",
+            "S&P",
+            "25 g Pinienkerne (optional)"
+        ],
+        "cookingSteps": [
+            "Salat waschen",
+            "Salat trocknen und dann in Schüssel",
+            "In anderer Schüssel Honig, Senf, Olivenöl, Balsamico und Zitronensaft rein",
+            "kleine Prise Chilliflocken dazu",
+            "Salz und Pfeffer dazu",
+            "Dressing gleichmäßig vermischen",
+            "Dressing (so viel wie gewünscht) über Salat und vermischen",
+            "Wassermelone würfeln",
+            "Feta würfeln",
+            "Beides in Salatschüssel",
+            "Optional geröstete Pinienkerne drüber"
+        ],
+        "notes": "Salat gut trocknen mit Schleuder, sonst haftet Dressing nicht daran",
+        "source": "https://youtu.be/ZB_HoYzcBR0",
+        "type": "Vegetarian"
     }
 ]
