@@ -252,5 +252,44 @@
         "notes": "Salat gut trocknen mit Schleuder, sonst haftet Dressing nicht daran",
         "source": "https://youtu.be/ZB_HoYzcBR0",
         "type": "Vegetarian"
+    },
+    {
+        "name": "Kichererbsen-Curry 2",
+        "ingredients": [
+            "1 Zwiebel",
+            "5 Knoblauchzehen",
+            "4 Thymian-Zweige",
+            "Daumengroßes, geschältes Ingwerstück",
+            "200g Cherry-Tomaten",
+            "1 EL Tomatenmark",
+            "Wasser",
+            "1 EL Currypulver",
+            "1 TL Salz",
+            "1 TL Kreuzkümmel",
+            "1/2 TL Garam Masalla",
+            "1/4 TL Kurkuma",
+            "Chiliflocken",
+            "1/2 Limette",
+            "400g Kokosmilch",
+            "120ml Gemüsebrühe",
+            "400g Kichererbsen"
+        ],
+        "cookingSteps": [
+            "Zwiebel feinhacken",
+            "Knoblauch und Ingwer feinhacken",
+            "Cherrytomaten halbieren",
+            "Zwiebeln anbraten",
+            "Knoblauch, Thymian-Zweige und Ingwer dazu -> 1 Minute anbraten",
+            "Tomaten dazu und kurz mit anbraten",
+            "Tomatenmark und 1EL Wasser dazu",
+            "Gewürze hinzu: Curry, Salz, Kreuzkümmel, Garam Mashalla, Kurkuma und etwas Chiliflocken",
+            "Mit Kokosmilch ablöschen",
+            "120 ml Gemüsebrühe dazu",
+            "10-15 Minuten köcheln lassen",
+            "Mit Limette verfeinern"
+        ],
+        "notes": "",
+        "source": "",
+        "type": "Vegan"
     }
 ]
