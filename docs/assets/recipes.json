@@ -291,5 +291,63 @@
         "notes": "",
         "source": "",
         "type": "Vegan"
+    },
+    {
+        "name": "Lemon Tahini Pasta",
+        "ingredients": [
+            "300g Spaghetti",
+            "115g Tahini",
+            "1 EL Soyasauce",
+            "Basilikum und Petersilie",
+            "Schwarzer Pfeffer",
+            "3 Knoblauchzehen",
+            "1 Zitrone",
+            "1 Kelle Pasta Water",
+            "1 Dose Kichererbsen",
+            "Bisschen Chiliflocken"
+        ],
+        "cookingSteps": [
+            "Alles außer Spaghetti, Pasta Water und Kichererbsen pürieren",
+            "Spaghetti al dente in Salzwasser kochen",
+            "Spaghetti, Pasta Water und Rest miteinander vermengen, bis Sauce cremig wird"
+        ],
+        "notes": "",
+        "source": "https://cozypeachkitchen.com/herby-lemon-tahini-pasta/",
+        "type": "Vegan"
+    },
+    {
+        "name": "Spaghetti al Pomodoro",
+        "ingredients": [
+            "300g Spaghetti",
+            "400g Cherry-Tomaten",
+            "Bund frischer Baisilikum",
+            "3 Knoblauchzehen",
+            "4 EL Olivenöl",
+            "Salz und Pfeffer",
+            "Parmesan"
+        ],
+        "cookingSteps": [
+            "Cherrytomaten halbieren",
+            "Olivenöl in Pfanne",
+            "Crushed Knoblauch in Olivenöl erhiten (nicht länger als 30 Sekunden, nicht verbrennen!)",
+            "Tomaten dazu",
+            "Salz und Pfeffer dazu",
+            "Tomaten auf Medium Heat kochen, nichts anbrennen lassen",
+            "Basilikumstengel (Blätter noch dran!) einmal anbrechen und hinzu",
+            "Tomaten werden weich und verlieren den Saft. Mit Kochläffel nochmal nachpressen, damit Tomatensud entsteht",
+            "Nach mind. 10 Minuten den Basilikum entfernen",
+            "Spaghetti in Salzwasser kochen (2 1/2 EL Salz auf 3,5 L Wasser)",
+            "Pfanneninhalt in einen Mixer geben und 3 mal kurz Mixen",
+            "Mixerinhalt wieder in Pfanne und auf niedriger(!) Hitze weiterköcheln",
+            "Frische Basilikumblätter zerreissen und in die Pfanne",
+            "Spaghetti in die Pfanne dazu und alles vermischen. Herd aus!",
+            "Evtl noch 1 Kelle Pastawasser dazu",
+            "Alles vermischen",
+            "Ein bisschen Olivenöl und mehr Basilikumblätter noch dazu"
+
+        ],
+        "notes": "",
+        "source": "https://youtu.be/NIgKvlAYOdU?si=y_MZfrL8u4zCYCtU",
+        "type": "Vegan"
     }
 ]
