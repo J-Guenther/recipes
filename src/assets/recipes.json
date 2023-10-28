@@ -440,5 +440,46 @@
         "notes": "",
         "source": "https://youtu.be/_tsoO7LMhwU?si=jwrTJVXT_P-vfE5H",
         "type": "Vegetarian"
+    },
+    {
+        "name": "Umami Mac'n'Cheese",
+        "ingredients": [
+            "350g Tofu",
+            "1/2 Zwiebel",
+            "2 + 1 TL Öl",
+            "1 TL smoked paprika",
+            "2 EL soy sauce",
+            "1 EL dark soy sauce",
+            "1 TL garlic powder",
+            "1 TL sweet paprika",
+            "1/4 TL cayenne pepper",
+            "2 EL tomato paste",
+            "350 ml red wine (or veggie stock)",
+            "700 ml unsalted Gemüsebrühe",
+            "250g macaroni",
+            "60-80g plantbased cheese",
+            "few sprigs parsley"
+        ],
+        "cookingSteps": [
+            "Tofu pressen",
+            "Tofu in Schüssel zerbröseln",
+            "Zwiebel schneiden",
+            "Topf erhitzen",
+            "Öl in Topf und warten bis es heiss wird",
+            "Dann Tofu ein (erst wenn Öl heiss ist, sonst backt es an Topfboden an)",
+            "Tofu 2-3 min anbraten",
+            "Smoked Paprika, Sojasauce hinzu, für 2-3 Minuten weiter anbraten",
+            "Topfinhalt in Schüssel und beiseite stellen",
+            "In gleichen Topf dann Zwiebel anbraten",
+            "Knoblauchpulver, Paprikapulver (Süß), Cayennepfeffer und Tomatenmark dazu und verühren",
+            "Rotwein hinzu und für 3 Min köcheln lassen",
+            "Gemüsebrühe hinzu und zum kochen bringen",
+            "Macaroni hinzu und al dente kochen (nach Packungsanweisung)",
+            "Danach Tofu wieder hinzu und ein paar Minuten mitkochen",
+            "Hitze ausmachen und plantbased cheese rein und schmelzen lassen"
+        ],
+        "notes": "",
+        "source": "https://youtu.be/m_AkQaHOoW4?si=5QO62e91UB85h6wj",
+        "type": "Vegan"
     }
 ]
