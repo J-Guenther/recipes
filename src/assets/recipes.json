@@ -654,6 +654,46 @@
         "notes": "",
         "source": "",
         "type": "Vegetarian"
+    },
+    {
+        "name": "Plant-based Köttbullar",
+        "ingredients": [
+            "400g Natur Tofu",
+            "250g Räuchertofu",
+            "1 Zwiebel",
+            "1 Handvoll Petersilie",
+            "150g Semmelbrösel",
+            "1 EL Senf",
+            "Etwas Salz",
+            "1 EL Sojasauce",
+            "Öl zum Braten",
+            "FÜR SOßE:",
+            "50g vegane Butter",
+            "2EL Mehl",
+            "400ml Gemüsefond",
+            "200ml pflanzliche Sahne",
+            "1 EL Senf",
+            "Etwas Salz",
+            "Etwas Pfeffer",
+            "1 EL Weißwein-Essig"
+        ],
+        "cookingSteps": [
+            "Natur Tofu und Räuchertofu im Mixer feinmahlen",
+            "Tofumasse in einer Schüssel mit Zwiebel, Petersilie, Semmelbrösel, Senf, etwas Salz und Sojasauce vermischen",
+            "Gut durchkneten und dann Köttbullar formen",
+            "In Öl anbraten",
+            "SOßE:",
+            "Butter im Topf schmelzen und Mehl hinzugeben um Mehlschwitze zu machen",
+            "Gemüsebrühe dazugeben",
+            "Sahne dazugeben",
+            "Senf dazu",
+            "Salz und Pfeffer dazu",
+            "Kurz aufkochen lassen und dann Hitze reduzieren",
+            "Weißwein-Essig dazu"
+        ],
+        "notes": "Mit Kartoffelpüree, Pommes oder Wedges servieren. Dazu passen Preiselbeeren gut!",
+        "source": "https://www.instagram.com/reel/C1_vftdq7Z3/?igsh=MTA3MHplaHg1a3E5dQ%3D%3D",
+        "type": "Vegan"
     }
 
 ]
