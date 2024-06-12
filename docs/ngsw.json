@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1705838245028,
-  "index": "/recipes/index.html",
+  "timestamp": 1718221048683,
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/recipes/favicon.ico",
-        "/recipes/index.html",
-        "/recipes/main.43021c9568b7e700.js",
-        "/recipes/manifest.webmanifest",
-        "/recipes/polyfills.db6ea45aedfee9ec.js",
-        "/recipes/runtime.dd203d66ed059e99.js",
-        "/recipes/styles.785df645b9164c18.css"
+        "/favicon.ico",
+        "/index.html",
+        "/main.43021c9568b7e700.js",
+        "/manifest.webmanifest",
+        "/polyfills.db6ea45aedfee9ec.js",
+        "/runtime.dd203d66ed059e99.js",
+        "/styles.785df645b9164c18.css"
       ],
       "patterns": []
     },
@@ -29,39 +29,39 @@
         "ignoreVary": true
       },
       "urls": [
-        "/recipes/assets/icons/icon-128x128.png",
-        "/recipes/assets/icons/icon-144x144.png",
-        "/recipes/assets/icons/icon-152x152.png",
-        "/recipes/assets/icons/icon-192x192.png",
-        "/recipes/assets/icons/icon-384x384.png",
-        "/recipes/assets/icons/icon-512x512.png",
-        "/recipes/assets/icons/icon-72x72.png",
-        "/recipes/assets/icons/icon-96x96.png",
-        "/recipes/assets/recipes.json",
-        "/recipes/assets/recipes.md"
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/recipes.json",
+        "/assets/recipes.md"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/recipes/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
-    "/recipes/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
-    "/recipes/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
-    "/recipes/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
-    "/recipes/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/recipes/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/recipes/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
-    "/recipes/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "/recipes/assets/recipes.json": "64d37dc65e884600aa8329a581572b7dfb49e94a",
-    "/recipes/assets/recipes.md": "7719ffabba8c94710c4526bebc5648fa57389b77",
-    "/recipes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/recipes/index.html": "ce0c00d06792fe5065f8007d8501ac41e4a66771",
-    "/recipes/main.43021c9568b7e700.js": "0b816f8e74dc6d1472e46bbcf2e9e6dde7764192",
-    "/recipes/manifest.webmanifest": "1ebfccc5be1eb5ecd687d664010f41273694400e",
-    "/recipes/polyfills.db6ea45aedfee9ec.js": "6b23d4fe1cb2238f01687e81d1bcbe1947f8a645",
-    "/recipes/runtime.dd203d66ed059e99.js": "d735543189d2c516b094c1ac6b2def2daafaacba",
-    "/recipes/styles.785df645b9164c18.css": "ad45e055201a0a12433e51ee52df9d74492a64f3"
+    "/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/assets/recipes.json": "24f44e4aeae2448f0cca8e07fdcfac65d89a5826",
+    "/assets/recipes.md": "7719ffabba8c94710c4526bebc5648fa57389b77",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "f6bc81891a8c01a9e016f02ee887ff3631efd0e8",
+    "/main.43021c9568b7e700.js": "0b816f8e74dc6d1472e46bbcf2e9e6dde7764192",
+    "/manifest.webmanifest": "1ebfccc5be1eb5ecd687d664010f41273694400e",
+    "/polyfills.db6ea45aedfee9ec.js": "6b23d4fe1cb2238f01687e81d1bcbe1947f8a645",
+    "/runtime.dd203d66ed059e99.js": "d735543189d2c516b094c1ac6b2def2daafaacba",
+    "/styles.785df645b9164c18.css": "ad45e055201a0a12433e51ee52df9d74492a64f3"
   },
   "navigationUrls": [
     {

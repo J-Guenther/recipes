@@ -694,6 +694,127 @@
         "notes": "Mit Kartoffelpüree, Pommes oder Wedges servieren. Dazu passen Preiselbeeren gut!",
         "source": "https://www.instagram.com/reel/C1_vftdq7Z3/?igsh=MTA3MHplaHg1a3E5dQ%3D%3D",
         "type": "Vegan"
-    }
+    },
+    {
+        "name": "One-Pot Gnocchi",
+        "ingredients": [
+            "1 Zwiebel",
+            "2 Knoblauchzehen",
+            "Handvoll getrocknete Tomaten",
+            "2 EL Tomatenmark",
+            "1 EL getrocknete italienische Kräuter",
+            "Salz nach Geschmack",
+            "300-500g Gnocchi (achte darauf, dass sie vegan sind)",
+            "125ml - 200 ml vegane Sahne",
+            "250ml Wasser",
+            "Olivenöl"
+        ],
+        "cookingSteps": [
+            "Zwiebel, getrocknete Tomaten, Knoblauchzehen kleinhacken und in Olivenöl anbraten",
+            "Tomatenmark und Gewürze dazu und mit anbraten",
+            "Salz nach Geschmack",
+            "Gnocchie dazu und kurz mit anbraten",
+            "Sahne und Wasser dazu",
+            "Umrühren und 10 Minuten köcheln lassen"
+        ],
+        "notes": "",
+        "source": "https://www.instagram.com/reel/C3n5nA0KYxo/?igsh=MW5mam5laGw3NXB5Mg==",
+        "type": "Vegan"
+    },
+    {
+        "name": "Kichererbsensalat-Sandwich",
+        "ingredients": [
+            "🥪Sandwich:",
+            "1 Baguette-Brot",
+            "260 g Kichererbsen, vorgekocht ( 1 Dose)",
+            "1/2 rote Zwiebel, gehackt",
+            "2 EL Petersilie, frisch",
+            "1 EL Dill",
+            "Etwas Salz",
+            "Etwas schwarzer Pfeffer",
+            "1 /2 EL Agavendicksaft",
+            "3 - 4 EL Vegane Mayonnaise",
+            "2 TL Dijon-Senf",
+            "Etwas Kala Namak (optional)",
+            "",
+            "💧Dressing:",
+            "1 EL Olivenöl",
+            "1 TL Dijon-Senf",
+            "Etwas Salz",
+            "1 TL Agavendicksaft",
+            "1 TL Gefrorene Gartenkräuter",
+            "1 Knoblauchzehe, geraspelt",
+            "1/2  Zitrone, Saft",
+            "",
+            "🥗Salat",
+            "Etwas Salatblätter",
+            "2 Tomaten"
+        ],
+        "cookingSteps": [
+            "Kichererbsen mit Gabel zermatschen",
+            "Kräuter und Zwiebel kleinhacken",
+            "Alle Zutaten fürs Sandwich (außer das Baguette) in Schüssel vermischen",
+            "Alle Zutaten fürs Dressing in anderer Schüssel vermischen",
+            "Baguette belegen mit Kichererbsenmatsch, Salatblätter, Tomaten und etwas Dressing"
+        ],
+        "notes": "",
+        "source": "https://www.instagram.com/reel/C5p51WTKZv1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        "type": "Vegan"
+    },
+    {
+        "name": "Crunchy Kartoffelsalat",
+        "ingredients": [
+            "500-700g Kartoffel-Drillinge (ganzes Blech)",
+            "etwas Olivenöl ",
+            "Salz,Pfeffer,Paprika",
+            "1/2 frische Gurke ",
+            "1/2 Paprika",
+            "1 rote Zwiebel ",
+            "etwas Dill oder Petersilie ",
+            "",
+            "Dressing:",
+            "ca.4-5 EL Sojajoghurt ",
+            "2 EL Vegane Mayo ",
+            "1 EL Senf",
+            "1/2 Zitronensaft",
+            "Salz,Pfeffer"
+        ],
+        "cookingSteps": [
+            "Die Kartoffeln kochen, danach auf das Blech geben und zerquetschen. Etwas Olivenöl und Gewürze dazugeben und bei 180 Grad ca. 20 Minuten backen. Währenddessen das Gemüse klein schneiden. Alle Zutaten für das Dressing vermengen, das Gemüse hinzufügen. Die gebackenen Kartoffeln hinzugeben und den Salat sofort genießen."
+        ],
+        "notes": "",
+        "source": "https://www.instagram.com/reel/C3DXQiftWJP/",
+        "type": "Vegan"
+    },
+    {
+        "name": "Miso-Kokos Ramen",
+        "ingredients": [
+            "1 Zwiebel",
+            "1 daumen großes Stück Ingwer",
+            "3 Knoblauchzehen",
+            "500 ml Wasser",
+            "2 EL Mispoaste",
+            "2 EL Sojasauce",
+            "2 EL Zucker",
+            "Optional: 1 TL Gochujang",
+            "250 ml Kokosmilch",
+            "1 Limette",
+            "Zuckerschoten",
+            "Paprikapulver",
+            "Irgendwas mit Proteinen. Zum Beispiel Crispy Tofu",
+            "Ramennudeln"
+        ],
+        "cookingSteps": [
+            "Zwiebel, Ingwer und Knoblauch kleinhacken und in Öl anbraten",
+            "Misopaste, Sojasauce, Zucker und Gochujang dazu und vermischen",
+            "Kokosmilch dazu und köcheln lassen",
+            "Zuckerschoten in anderer Pfanne in Öl anbraten. Paprikapulver und Prise Salz dazu und dann mit Limettensaft ablöschen.",
+            "Nudeln und Proteine vorbereiten",
+            "Fertig. Entweder alles in Pfanne vermischen (Sauce, Zuckerschoten, Nudeln, Proteine) oder erst auf Teller zusammenbringen"
 
+        ],
+        "notes": "",
+        "source": "https://www.instagram.com/reel/C2LHS8aqvtd/",
+        "type": "Vegan"
+    }
 ]
