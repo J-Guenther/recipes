@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1718542598939,
+  "timestamp": 1719586840693,
   "index": "/recipes/index.html",
   "assetGroups": [
     {
@@ -53,7 +53,7 @@
     "/recipes/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/recipes/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "/recipes/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "/recipes/assets/recipes.json": "24f44e4aeae2448f0cca8e07fdcfac65d89a5826",
+    "/recipes/assets/recipes.json": "49f68484f3c862f7e6948bcdfb37aedd63021870",
     "/recipes/assets/recipes.md": "7719ffabba8c94710c4526bebc5648fa57389b77",
     "/recipes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/recipes/index.html": "df5595b5bfe3dd03686c15bd2919f282eb807ae1",

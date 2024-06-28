@@ -816,5 +816,42 @@
         "notes": "",
         "source": "https://www.instagram.com/reel/C2LHS8aqvtd/",
         "type": "Vegan"
+    },
+    {
+        "name": "Geiles Chili Sin Carne",
+        "ingredients": [
+            "1 Naturtofu",
+            "1 EL Sojasauce",
+            "1 Zwiebel",
+            "1 Paprika",
+            "1 Chili",
+            "1 gehäufter EL Tomatenmark",
+            "2 knoblauchzehen",
+            "Korianderpulver",
+            "1EL Ahornsirup",
+            "Geschälte Tomaten",
+            "300 ml Gemüsebrühe",
+            "1 kleine Dose Mais",
+            "1 Dose Kidneybohnen",
+            "1 EL Hefeflocken",
+            "Schwarzer Pfeffer",
+            "1 Zitrone",
+            "Gefrorene Kräuter"
+        ],
+        "cookingSteps": [
+            "Tofu zerbröseln und ca. 8 Minuten in Öl anbraten",
+            "Mit Sojasauce ablöschen",
+            "...zur Seite stellen",
+            "Zwiebel, Paprika und Chili in Öl anbraten",
+            "Tomatenmark und Knoblauch kurz mit anrösten",
+            "Korianderpulver, Ahornsirup und geschälte Tomaten dazu und gut verühren",
+            "Gemüsebrühe dazu",
+            "10 Minuten köcheln lassen",
+            "Mais, Tofu, Kidneybohnen dazu, kurz köcheln lassen",
+            "Hefeflocken, Ztrionensaft, Gefrorene Kräuter und Schwarzer Pfeffer dazu"
+        ],
+        "notes": "",
+        "source": "",
+        "type": "Vegan"
     }
 ]
