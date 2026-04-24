@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --cream: oklch(0.965 0.014 80);
+            --cream-dark: oklch(0.93 0.018 75);
+            --cream-border: oklch(0.87 0.022 72);
+            --charcoal: oklch(0.18 0.01 60);
+            --charcoal-mid: oklch(0.38 0.01 60);
+            --charcoal-light: oklch(0.58 0.01 60);
+            --terra: oklch(0.60 0.13 38);
+            --terra-light: oklch(0.93 0.04 38);
+            --sage: oklch(0.58 0.09 148);
+            --sage-light: oklch(0.93 0.04 148);
+            --sky: oklch(0.60 0.09 230);
+            --sky-light: oklch(0.93 0.04 230);
+            --plum: oklch(0.55 0.10 310);
+            --plum-light: oklch(0.93 0.04 310);
+            --amber: oklch(0.72 0.13 75);
+            --amber-light: oklch(0.95 0.04 75);
+        }
+
+        html, body { height: 100%; background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; }
+
+        #root { min-height: 100vh; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--cream-border); border-radius: 3px; }
+
+        /* Mobile filter strip — hide scrollbar but keep scrollable */
+        .filter-strip { display: flex; gap: 8px; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .filter-strip::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const { useState, useEffect, useRef, useCallback } = React;
+
+    function useIsMobile() {
+        const [mobile, setMobile] = useState(() => window.innerWidth < 640);
+        useEffect(() => {
+            const fn = () => setMobile(window.innerWidth < 640);
+            window.addEventListener('resize', fn);
+            return () => window.removeEventListener('resize', fn);
+        }, []);
+        return mobile;
+    }
+
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+        "accentColor": "terra",
+        "showImages": true,
+        "density": "comfortable"
+    }/*EDITMODE-END*/;
+
+    // ── Tag config ──────────────────────────────────────────────────────────────
+    const TAG_COLORS = {
+        pasta:       { bg: 'var(--amber-light)',  fg: 'var(--charcoal)', dot: 'var(--amber)'  },
+        tofu:        { bg: 'var(--sage-light)',   fg: 'var(--charcoal)', dot: 'var(--sage)'   },
+        vegan:       { bg: 'var(--sage-light)',   fg: 'var(--charcoal)', dot: 'var(--sage)'   },
+        vegetarian:  { bg: 'var(--sage-light)',   fg: 'var(--charcoal)', dot: 'var(--sage)'   },
+        drinks:      { bg: 'var(--sky-light)',    fg: 'var(--charcoal)', dot: 'var(--sky)'    },
+        dessert:     { bg: 'var(--plum-light)',   fg: 'var(--charcoal)', dot: 'var(--plum)'   },
+        soup:        { bg: 'var(--sky-light)',    fg: 'var(--charcoal)', dot: 'var(--sky)'    },
+        salad:       { bg: 'var(--sage-light)',   fg: 'var(--charcoal)', dot: 'var(--sage)'   },
+        meat:        { bg: 'var(--terra-light)',  fg: 'var(--charcoal)', dot: 'var(--terra)'  },
+        seafood:     { bg: 'var(--sky-light)',    fg: 'var(--charcoal)', dot: 'var(--sky)'    },
+        quick:       { bg: 'var(--amber-light)',  fg: 'var(--charcoal)', dot: 'var(--amber)'  },
+        dairy:       { bg: 'var(--cream-dark)',   fg: 'var(--charcoal)', dot: 'var(--charcoal-light)' },
+        noodles:     { bg: 'var(--amber-light)',  fg: 'var(--charcoal)', dot: 'var(--amber)'  },
+        italian:     { bg: 'var(--terra-light)',  fg: 'var(--charcoal)', dot: 'var(--terra)'  },
+        japanese:    { bg: 'var(--plum-light)',   fg: 'var(--charcoal)', dot: 'var(--plum)'   },
+        mexican:     { bg: 'var(--terra-light)',  fg: 'var(--charcoal)', dot: 'var(--terra)'  },
+        default:     { bg: 'var(--cream-dark)',   fg: 'var(--charcoal)', dot: 'var(--charcoal-light)' },
+    };
+    function tagStyle(tag) { return TAG_COLORS[tag] || TAG_COLORS.default; }
+
+    // ── Recipe data ──────────────────────────────────────────────────────────────
+    const RECIPES = [
+        {
+            id: 1,
+            name: "Spaghetti Carbonara",
+            tags: ["pasta", "italian", "dairy"],
+            time: "25 min",
+            servings: 2,
+            difficulty: "Medium",
+            description: "A Roman classic — silky egg and pecorino sauce, guanciale, and a crack of black pepper.",
+            ingredients: [
+                "200g spaghetti",
+                "100g guanciale (or pancetta), diced",
+                "2 large eggs + 2 yolks",
+                "60g Pecorino Romano, finely grated",
+                "30g Parmigiano Reggiano, finely grated",
+                "Freshly cracked black pepper",
+                "Salt, for pasta water",
+            ],
+            steps: [
+                "Bring a large pot of generously salted water to a boil. Cook spaghetti until al dente — reserve 1 cup of pasta water before draining.",
+                "While pasta cooks, fry guanciale in a large skillet over medium heat until crispy and fat has rendered, about 6–8 minutes. Remove from heat.",
+                "Whisk eggs, yolks, pecorino, and parmigiano together in a bowl. Season heavily with black pepper.",
+                "Add drained pasta to the skillet with guanciale (off heat). Pour egg mixture over, tossing rapidly. Add pasta water splash by splash until sauce is creamy and clings to each strand.",
+                "Serve immediately, topped with more grated cheese and a generous grind of black pepper.",
+            ],
+            notes: "The key is temperature control — if the pan is too hot, the eggs will scramble. Let the pan cool for 30 seconds before adding the egg mixture.",
+            source: null,
+        },
+        {
+            id: 2,
+            name: "Pad Thai",
+            tags: ["noodles", "seafood", "quick"],
+            time: "20 min",
+            servings: 2,
+            difficulty: "Easy",
+            description: "Thailand's beloved stir-fried noodle dish with shrimp, egg, bean sprouts, and a tangy tamarind sauce.",
+            ingredients: [
+                "200g flat rice noodles",
+                "150g shrimp, peeled and deveined",
+                "2 eggs",
+                "3 tbsp tamarind paste",
+                "2 tbsp fish sauce",
+                "1 tbsp palm sugar",
+                "1 cup bean sprouts",
+                "3 green onions, sliced",
+                "2 tbsp roasted peanuts, crushed",
+                "2 tbsp vegetable oil",
+                "Lime wedges, to serve",
+            ],
+            steps: [
+                "Soak rice noodles in warm water for 20 minutes until pliable but not fully cooked. Drain and set aside.",
+                "Mix tamarind paste, fish sauce, and palm sugar in a small bowl. Set aside.",
+                "Heat oil in a wok over high heat. Add shrimp and cook until pink, about 2 minutes. Push to the side.",
+                "Crack eggs into the wok and scramble, then fold into the shrimp.",
+                "Add noodles and sauce. Toss everything together vigorously for 2–3 minutes.",
+                "Add bean sprouts and green onions, toss once more. Serve immediately topped with crushed peanuts and a lime wedge.",
+            ],
+            notes: "Use a very hot wok — 'wok hei' (breath of the wok) is everything. Don't overcrowd the pan; cook in batches if needed.",
+            source: "https://www.youtube.com/watch?v=example-padthai",
+        },
+        {
+            id: 3,
+            name: "Crispy Tofu Stir Fry",
+            tags: ["tofu", "vegan", "quick"],
+            time: "30 min",
+            servings: 2,
+            difficulty: "Easy",
+            description: "Golden crispy tofu in a savory ginger-garlic sauce with seasonal vegetables.",
+            ingredients: [
+                "400g firm tofu, pressed and cubed",
+                "2 tbsp cornstarch",
+                "3 tbsp soy sauce",
+                "1 tbsp sesame oil",
+                "1 tbsp rice vinegar",
+                "1 tsp sriracha",
+                "1 tbsp fresh ginger, grated",
+                "3 garlic cloves, minced",
+                "1 bell pepper, sliced",
+                "1 head broccoli, cut into florets",
+                "2 tbsp vegetable oil",
+                "Sesame seeds, to garnish",
+            ],
+            steps: [
+                "Press tofu between towels for at least 15 minutes to remove excess moisture. Cut into 1-inch cubes and toss with cornstarch, salt, and pepper.",
+                "Heat oil in a large skillet over high heat. Add tofu in a single layer and cook undisturbed for 3–4 minutes per side until golden and crispy. Remove and set aside.",
+                "In the same skillet, sauté garlic and ginger for 1 minute until fragrant.",
+                "Add broccoli and bell pepper, stir-fry for 4–5 minutes until tender-crisp.",
+                "Mix soy sauce, sesame oil, rice vinegar, and sriracha. Pour over vegetables and toss.",
+                "Return tofu to the skillet, toss to coat. Garnish with sesame seeds. Serve over rice.",
+            ],
+            notes: "Pressing the tofu is non-negotiable for crispiness. For extra crunch, bake at 200°C for 25 minutes instead of pan-frying.",
+            source: "https://www.youtube.com/watch?v=example-tofu",
+        },
+        {
+            id: 4,
+            name: "Miso Ramen",
+            tags: ["soup", "japanese", "noodles"],
+            time: "45 min",
+            servings: 2,
+            difficulty: "Medium",
+            description: "A rich, deeply umami miso broth with ramen noodles, soft-boiled eggs, and toppings.",
+            ingredients: [
+                "2 portions fresh ramen noodles",
+                "4 tbsp white miso paste",
+                "700ml dashi or chicken broth",
+                "200ml oat milk or whole milk",
+                "1 tbsp sesame paste (tahini)",
+                "1 tbsp soy sauce",
+                "1 tsp mirin",
+                "2 soft-boiled eggs, marinated",
+                "1 sheet nori, halved",
+                "2 green onions, sliced",
+                "Corn kernels and bamboo shoots, to top",
+            ],
+            steps: [
+                "Marinate soft-boiled eggs: peel and soak in a mix of 3 tbsp soy sauce, 1 tbsp mirin, and water for at least 4 hours (overnight is best).",
+                "Heat broth in a pot until simmering. Whisk in miso paste until dissolved — do not boil once miso is added.",
+                "Stir in milk and sesame paste for richness. Season with soy sauce and mirin.",
+                "Cook ramen noodles according to package instructions. Drain and divide between two deep bowls.",
+                "Ladle hot miso broth over noodles. Arrange a halved marinated egg, nori, corn, bamboo shoots, and green onions on top.",
+            ],
+            notes: "Never boil miso — it destroys the delicate fermented flavors. Add it at the end off direct heat.",
+            source: "https://www.youtube.com/watch?v=example-ramen",
+        },
+        {
+            id: 5,
+            name: "Matcha Latte",
+            tags: ["drinks", "vegan"],
+            time: "5 min",
+            servings: 1,
+            difficulty: "Easy",
+            description: "A smooth, vibrant green tea latte with frothy oat milk — calming and energizing.",
+            ingredients: [
+                "1.5 tsp ceremonial-grade matcha powder",
+                "60ml hot water (70–80°C, not boiling)",
+                "200ml oat milk",
+                "1 tsp honey or agave (optional)",
+            ],
+            steps: [
+                "Sift matcha powder into a cup to remove lumps.",
+                "Add hot water and whisk vigorously in a W-shape motion until frothy and smooth (or use a small electric frother).",
+                "Heat oat milk and froth it using a steam wand, frother, or by shaking in a jar.",
+                "Pour matcha shot, then gently add frothy milk over the top. Sweeten if desired.",
+            ],
+            notes: "Quality of matcha matters enormously — ceremonial grade has a natural sweetness; culinary grade can be bitter. Serve over ice for an iced matcha latte.",
+            source: null,
+        },
+        {
+            id: 6,
+            name: "Classic Tiramisu",
+            tags: ["dessert", "italian", "dairy"],
+            time: "30 min + chill",
+            servings: 6,
+            difficulty: "Medium",
+            description: "The iconic Italian dessert — espresso-soaked ladyfingers layered with mascarpone cream and dusted with cocoa.",
+            ingredients: [
+                "300g ladyfinger biscuits (savoiardi)",
+                "500g mascarpone cheese",
+                "4 eggs, separated",
+                "100g caster sugar",
+                "300ml strong espresso, cooled",
+                "3 tbsp coffee liqueur (Kahlúa or Marsala)",
+                "Good quality cocoa powder, for dusting",
+            ],
+            steps: [
+                "Beat egg yolks and sugar together until pale and doubled in volume, about 5 minutes. Fold in mascarpone gently.",
+                "In a separate bowl, whisk egg whites to stiff peaks. Carefully fold into the mascarpone mixture in three stages.",
+                "Mix cooled espresso and liqueur in a shallow dish.",
+                "Quickly dip each ladyfinger in the espresso (1–2 seconds per side — don't soak). Layer in a dish.",
+                "Spread half the mascarpone cream over the biscuit layer. Repeat with another layer of dipped biscuits and the remaining cream.",
+                "Cover and refrigerate for at least 4 hours (overnight is ideal). Dust generously with cocoa powder before serving.",
+            ],
+            notes: "Dipping the ladyfingers too long makes the dessert soggy. A quick dip on each side is all you need. Raw eggs can be avoided by using pasteurized eggs.",
+            source: null,
+        },
+        {
+            id: 7,
+            name: "Avocado Toast",
+            tags: ["vegan", "quick"],
+            time: "10 min",
+            servings: 1,
+            difficulty: "Easy",
+            description: "Perfectly seasoned smashed avocado on crusty sourdough — elevated with chili flakes and a squeeze of lemon.",
+            ingredients: [
+                "2 thick slices sourdough bread",
+                "1 ripe avocado",
+                "Juice of ½ lemon",
+                "Flaky sea salt",
+                "Chili flakes",
+                "Olive oil, to drizzle",
+                "Optional: cherry tomatoes, microgreens, or a poached egg",
+            ],
+            steps: [
+                "Toast sourdough slices until golden and sturdy.",
+                "Halve the avocado, remove the pit, and scoop flesh into a bowl.",
+                "Add lemon juice and a pinch of salt. Mash with a fork to your preferred texture (chunky or smooth).",
+                "Spread generously onto toast. Drizzle with olive oil, sprinkle with flaky salt and chili flakes.",
+                "Add any optional toppings and serve immediately.",
+            ],
+            notes: "The avocado must be perfectly ripe — it should yield gently to pressure. A touch of everything bagel seasoning instead of plain salt is wonderful here.",
+            source: null,
+        },
+        {
+            id: 8,
+            name: "Greek Salad",
+            tags: ["salad", "vegan", "quick"],
+            time: "15 min",
+            servings: 2,
+            difficulty: "Easy",
+            description: "A bright, satisfying salad of ripe tomatoes, cucumber, olives, red onion, and generous feta.",
+            ingredients: [
+                "3 large ripe tomatoes, cut in chunks",
+                "1 cucumber, sliced",
+                "½ red onion, thinly sliced",
+                "100g Kalamata olives",
+                "200g good feta cheese, in a block",
+                "3 tbsp extra-virgin olive oil",
+                "1 tbsp red wine vinegar",
+                "Dried oregano",
+                "Salt and black pepper",
+            ],
+            steps: [
+                "Combine tomatoes, cucumber, red onion, and olives in a large bowl. Season with salt.",
+                "Whisk together olive oil and red wine vinegar. Pour over the salad.",
+                "Place the feta block on top whole (traditional style) or crumble it over.",
+                "Crumble dried oregano generously over everything. A final drizzle of olive oil. Serve with crusty bread.",
+            ],
+            notes: "Never use pre-crumbled feta — a whole block has much better texture and flavor. The salad improves if left to sit for 10 minutes before serving.",
+            source: null,
+        },
+        {
+            id: 9,
+            name: "Tacos al Pastor",
+            tags: ["meat", "mexican"],
+            time: "40 min + marinate",
+            servings: 4,
+            difficulty: "Medium",
+            description: "Marinated pork with pineapple, cilantro, and salsa on warm corn tortillas — a taqueria staple.",
+            ingredients: [
+                "600g pork shoulder, thinly sliced",
+                "3 dried guajillo chiles, soaked and seeded",
+                "1 chipotle chile in adobo",
+                "½ cup pineapple juice",
+                "3 garlic cloves",
+                "1 tsp cumin",
+                "1 tsp oregano",
+                "2 tbsp apple cider vinegar",
+                "Salt",
+                "Small corn tortillas, warmed",
+                "Pineapple chunks, white onion, cilantro, lime — to serve",
+            ],
+            steps: [
+                "Blend guajillo chiles, chipotle, pineapple juice, garlic, cumin, oregano, vinegar, and salt into a smooth marinade.",
+                "Coat pork slices thoroughly in marinade. Cover and refrigerate for at least 2 hours (overnight preferred).",
+                "Cook marinated pork in a very hot cast-iron skillet or grill in batches, 2–3 minutes per side, until charred at the edges.",
+                "Rest meat briefly, then chop into small pieces.",
+                "Serve in warm tortillas with pineapple, white onion, fresh cilantro, and a squeeze of lime.",
+            ],
+            notes: "If you have a gas stove, you can char the guajillo chiles briefly over the flame before soaking for deeper flavor.",
+            source: "https://www.youtube.com/watch?v=example-tacos",
+        },
+        {
+            id: 10,
+            name: "Mushroom Risotto",
+            tags: ["vegetarian", "italian", "dairy"],
+            time: "40 min",
+            servings: 2,
+            difficulty: "Medium",
+            description: "Creamy, earthy risotto with porcini, cremini, and parmesan — finished with butter for a glossy richness.",
+            ingredients: [
+                "300g arborio rice",
+                "250g cremini mushrooms, sliced",
+                "15g dried porcini mushrooms",
+                "1 shallot, diced",
+                "2 garlic cloves, minced",
+                "150ml dry white wine",
+                "1L warm vegetable stock",
+                "50g butter (divided)",
+                "60g Parmigiano Reggiano, grated",
+                "Fresh thyme",
+                "Salt and pepper",
+            ],
+            steps: [
+                "Rehydrate dried porcini in 200ml hot water for 15 minutes. Strain, reserving the soaking liquid (add it to your warm stock).",
+                "Melt half the butter in a wide pan over medium heat. Sauté shallot until soft, then add garlic and thyme.",
+                "Add arborio rice and toast for 2 minutes, stirring, until translucent at the edges. Pour in white wine and stir until absorbed.",
+                "Add warm stock one ladle at a time, stirring constantly and only adding more when each addition is fully absorbed. This takes about 18 minutes.",
+                "Meanwhile, sauté cremini and rehydrated porcini in a separate pan until golden.",
+                "When rice is al dente, fold in mushrooms, remaining butter, and parmigiano. Season, rest for 2 minutes, and serve.",
+            ],
+            notes: "Risotto waits for no one — have your guests seated before the final ladle. The porcini soaking liquid is liquid gold; don't skip it.",
+            source: null,
+        },
+        {
+            id: 11,
+            name: "Cold Brew Coffee",
+            tags: ["drinks"],
+            time: "5 min + 12h steep",
+            servings: 4,
+            difficulty: "Easy",
+            description: "Smooth, low-acid cold brew concentrate — made overnight with coarsely ground coffee and cold water.",
+            ingredients: [
+                "100g coarsely ground coffee",
+                "800ml cold filtered water",
+            ],
+            steps: [
+                "Combine ground coffee and cold water in a large jar or pitcher. Stir gently to ensure all grounds are wet.",
+                "Cover and refrigerate for 12–16 hours.",
+                "Strain through a fine mesh sieve lined with a paper filter or cheesecloth. This may take 10–15 minutes — don't rush it.",
+                "The result is a concentrate. Dilute 1:1 with water or milk to serve. Serve over ice.",
+            ],
+            notes: "Coarseness of the grind matters — too fine and filtering will take forever and may make the brew bitter. Aim for a French press grind. The concentrate keeps in the fridge for up to 2 weeks.",
+            source: null,
+        },
+        {
+            id: 12,
+            name: "Banana Smoothie",
+            tags: ["drinks", "vegan", "quick"],
+            time: "5 min",
+            servings: 1,
+            difficulty: "Easy",
+            description: "A thick, creamy smoothie with frozen banana, peanut butter, and oat milk — wholesome and filling.",
+            ingredients: [
+                "2 frozen bananas, sliced",
+                "2 tbsp peanut butter",
+                "300ml oat milk",
+                "1 tbsp cacao powder (optional)",
+                "Pinch of cinnamon",
+            ],
+            steps: [
+                "Add all ingredients to a blender.",
+                "Blend on high for 60 seconds until completely smooth and creamy.",
+                "Taste and adjust — more peanut butter for richness, more oat milk if too thick.",
+                "Pour into a glass and serve immediately.",
+            ],
+            notes: "Freezing ripe bananas (peel first, then freeze) is the trick — they create natural sweetness and a thick, ice-cream-like texture with no added sugar.",
+            source: null,
+        },
+    ];
+
+    const QUICK_FILTERS = ["pasta", "tofu", "vegan", "drinks", "quick", "soup", "dessert", "meat", "salad"];
+
+    // ── Components ───────────────────────────────────────────────────────────────
+
+    function Tag({ label }) {
+        const s = tagStyle(label);
+        return (
+            <span style={{
+                display: 'inline-flex', alignItems: 'center', gap: 4,
+                background: s.bg, color: s.fg,
+                fontSize: 11, fontWeight: 500, letterSpacing: '0.03em',
+                padding: '3px 8px', borderRadius: 20,
+                fontFamily: "'DM Sans', sans-serif",
+                textTransform: 'capitalize', whiteSpace: 'nowrap',
+            }}>
+      <span style={{ width: 5, height: 5, borderRadius: '50%', background: s.dot, display: 'inline-block', flexShrink: 0 }} />
+                {label}
+    </span>
+        );
+    }
+
+    function DifficultyDot({ level }) {
+        const map = { Easy: 1, Medium: 2, Hard: 3 };
+        const n = map[level] || 1;
+        return (
+            <span style={{ display: 'inline-flex', gap: 3, alignItems: 'center' }}>
+      {[1,2,3].map(i => (
+          <span key={i} style={{
+              width: 6, height: 6, borderRadius: '50%',
+              background: i <= n ? 'var(--terra)' : 'var(--cream-border)',
+          }} />
+      ))}
+    </span>
+        );
+    }
+
+    function Modal({ recipe, onClose }) {
+        const overlayRef = useRef(null);
+        const mobile = useIsMobile();
+
+        useEffect(() => {
+            document.body.style.overflow = 'hidden';
+            const handler = (e) => { if (e.key === 'Escape') onClose(); };
+            window.addEventListener('keydown', handler);
+            return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', handler); };
+        }, []);
+
+        const hPad = mobile ? '20px' : '40px';
+        const hPadTop = mobile ? '24px' : '36px';
+
+        return (
+            <div
+                ref={overlayRef}
+                onClick={e => { if (e.target === overlayRef.current) onClose(); }}
+                style={{
+                    position: 'fixed', inset: 0, zIndex: 1000,
+                    background: 'oklch(0.10 0.01 60 / 0.55)',
+                    backdropFilter: 'blur(4px)',
+                    display: 'flex',
+                    alignItems: mobile ? 'flex-end' : 'center',
+                    justifyContent: 'center',
+                    padding: mobile ? 0 : '24px',
+                    animation: 'fadeIn 0.18s ease',
+                }}
+            >
+                <div style={{
+                    background: 'var(--cream)',
+                    borderRadius: mobile ? '16px 16px 0 0' : 16,
+                    width: '100%', maxWidth: mobile ? '100%' : 680,
+                    maxHeight: mobile ? '92vh' : '90vh',
+                    overflowY: 'auto',
+                    boxShadow: '0 24px 80px oklch(0.10 0.01 60 / 0.35)',
+                    animation: mobile ? 'slideUpMobile 0.25s ease' : 'slideUp 0.22s ease',
+                    position: 'relative',
+                }}>
+                    {/* Header */}
+                    <div style={{
+                        padding: `${hPadTop} ${hPad} 20px`,
+                        borderBottom: '1px solid var(--cream-border)',
+                        position: 'sticky', top: 0, background: 'var(--cream)', zIndex: 10,
+                        borderRadius: mobile ? '16px 16px 0 0' : '16px 16px 0 0',
+                    }}>
+                        {/* Mobile drag handle */}
+                        {mobile && (
+                            <div style={{ width: 36, height: 4, background: 'var(--cream-border)', borderRadius: 2, margin: '0 auto 16px' }} />
+                        )}
+                        <button onClick={onClose} style={{
+                            position: 'absolute', top: mobile ? 16 : 20, right: mobile ? 16 : 20,
+                            background: 'var(--cream-dark)', border: 'none', cursor: 'pointer',
+                            width: 32, height: 32, borderRadius: '50%',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            color: 'var(--charcoal-mid)', fontSize: 16, transition: 'background 0.15s',
+                        }}>✕</button>
+
+                        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10 }}>
+                            {recipe.tags.map(t => <Tag key={t} label={t} />)}
+                        </div>
+                        <h2 style={{
+                            fontFamily: "'Playfair Display', serif",
+                            fontSize: mobile ? 22 : 30, fontWeight: 600, lineHeight: 1.2,
+                            color: 'var(--charcoal)', marginBottom: 6,
+                        }}>{recipe.name}</h2>
+                        {!mobile && (
+                            <p style={{ color: 'var(--charcoal-mid)', fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>
+                                {recipe.description}
+                            </p>
+                        )}
+                        <div style={{ display: 'flex', gap: mobile ? 16 : 24, marginTop: mobile ? 10 : 0 }}>
+                            {[['⏱', recipe.time], ['🍽', `${recipe.servings} srv`], ['●', recipe.difficulty]].map(([icon, val]) => (
+                                <span key={val} style={{ fontSize: 12, color: 'var(--charcoal-light)', display: 'flex', alignItems: 'center', gap: 4 }}>
+                <span style={{ opacity: 0.7 }}>{icon}</span> {val}
+              </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div style={{ padding: `24px ${hPad}` }}>
+                        {/* Ingredients */}
+                        <section style={{ marginBottom: 28 }}>
+                            <h3 style={{
+                                fontFamily: "'Playfair Display', serif",
+                                fontSize: 16, fontWeight: 600, marginBottom: 12,
+                                color: 'var(--charcoal)',
+                                display: 'flex', alignItems: 'center', gap: 10,
+                            }}>
+                                <span style={{ width: 3, height: 16, background: 'var(--terra)', borderRadius: 2, display: 'inline-block' }} />
+                                Ingredients
+                            </h3>
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
+                                gap: mobile ? '4px 0' : '8px 24px',
+                            }}>
+                                {recipe.ingredients.map((ing, i) => (
+                                    <div key={i} style={{
+                                        display: 'flex', alignItems: 'flex-start', gap: 10,
+                                        fontSize: 13, color: 'var(--charcoal-mid)', lineHeight: 1.5,
+                                        padding: '6px 0', borderBottom: '1px solid var(--cream-dark)',
+                                    }}>
+                                        <span style={{ color: 'var(--terra)', fontSize: 9, marginTop: 5, flexShrink: 0 }}>◆</span>
+                                        {ing}
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Steps */}
+                        <section style={{ marginBottom: 28 }}>
+                            <h3 style={{
+                                fontFamily: "'Playfair Display', serif",
+                                fontSize: 16, fontWeight: 600, marginBottom: 12,
+                                color: 'var(--charcoal)',
+                                display: 'flex', alignItems: 'center', gap: 10,
+                            }}>
+                                <span style={{ width: 3, height: 16, background: 'var(--terra)', borderRadius: 2, display: 'inline-block' }} />
+                                Method
+                            </h3>
+                            <ol style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
+                                {recipe.steps.map((step, i) => (
+                                    <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                  <span style={{
+                      flexShrink: 0, width: 24, height: 24, borderRadius: '50%',
+                      background: 'var(--terra)', color: 'white',
+                      fontSize: 11, fontWeight: 500,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      marginTop: 1,
+                  }}>{i + 1}</span>
+                                        <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--charcoal-mid)', paddingTop: 3 }}>{step}</p>
+                                    </li>
+                                ))}
+                            </ol>
+                        </section>
+
+                        {/* Notes */}
+                        {recipe.notes && (
+                            <section style={{ marginBottom: recipe.source ? 24 : 0 }}>
+                                <div style={{
+                                    background: 'var(--terra-light)',
+                                    borderLeft: '3px solid var(--terra)',
+                                    borderRadius: '0 8px 8px 0',
+                                    padding: '12px 16px',
+                                }}>
+                                    <p style={{ fontSize: 11, fontWeight: 500, color: 'var(--terra)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Note</p>
+                                    <p style={{ fontSize: 13, color: 'var(--charcoal-mid)', lineHeight: 1.6 }}>{recipe.notes}</p>
+                                </div>
+                            </section>
+                        )}
+
+                        {/* Source */}
+                        {recipe.source && (
+                            <div style={{ marginTop: 24, paddingTop: 18, borderTop: '1px solid var(--cream-border)' }}>
+                                <a href={recipe.source} target="_blank" rel="noreferrer" style={{
+                                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                                    fontSize: 13, color: 'var(--terra)', textDecoration: 'none', fontWeight: 500,
+                                    padding: '8px 16px', background: 'var(--terra-light)',
+                                    borderRadius: 8, transition: 'opacity 0.15s',
+                                }}>
+                                    <span>↗</span> View Source
+                                </a>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    function App() {
+        const [query, setQuery] = useState('');
+        const [activeFilters, setActiveFilters] = useState([]);
+        const [selected, setSelected] = useState(null);
+        const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
+        const [tweaksOpen, setTweaksOpen] = useState(false);
+        const inputRef = useRef(null);
+        const mobile = useIsMobile();
+
+        // Tweaks protocol
+        useEffect(() => {
+            const handler = (e) => {
+                if (e.data?.type === '__activate_edit_mode') setTweaksOpen(true);
+                if (e.data?.type === '__deactivate_edit_mode') setTweaksOpen(false);
+            };
+            window.addEventListener('message', handler);
+            window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+            return () => window.removeEventListener('message', handler);
+        }, []);
+
+        const setTweak = (key, val) => {
+            const next = { ...tweaks, [key]: val };
+            setTweaks(next);
+            window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: val } }, '*');
+        };
+
+        const toggleFilter = useCallback((f) => {
+            setActiveFilters(prev => prev.includes(f) ? prev.filter(x => x !== f) : [...prev, f]);
+        }, []);
+
+        const filtered = RECIPES.filter(r => {
+            const q = query.toLowerCase().trim();
+            const matchQuery = !q || r.name.toLowerCase().includes(q) || r.tags.some(t => t.includes(q));
+            const matchFilters = activeFilters.length === 0 || activeFilters.every(f => r.tags.includes(f));
+            return matchQuery && matchFilters;
+        });
+
+        const density = tweaks.density;
+        const rowPad = density === 'compact' ? '10px 20px' : density === 'comfortable' ? '18px 20px' : '26px 20px';
+
+        return (
+            <div style={{ minHeight: '100vh', background: 'var(--cream)' }}>
+                {/* Header */}
+                <header style={{
+                    borderBottom: '1px solid var(--cream-border)',
+                    padding: mobile ? '0 16px' : '0 48px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    height: mobile ? 52 : 64,
+                    background: 'var(--cream)',
+                    position: 'sticky', top: 0, zIndex: 100,
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+          <span style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: mobile ? 18 : 22, fontWeight: 600, color: 'var(--charcoal)',
+              letterSpacing: '-0.01em',
+          }}>Recipes</span>
+                        <span style={{ fontSize: 12, color: 'var(--charcoal-light)' }}>{RECIPES.length} dishes</span>
+                    </div>
+                    {!mobile && (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--charcoal-light)' }}>
+                            <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: 'var(--terra)' }} />
+                            Personal cookbook
+                        </div>
+                    )}
+                </header>
+
+                <main style={{ maxWidth: 1000, margin: '0 auto', padding: mobile ? '20px 12px 60px' : '40px 48px 80px' }}>
+                    {/* Search + filters */}
+                    <div style={{ marginBottom: mobile ? 16 : 28 }}>
+                        {/* Search input */}
+                        <div style={{ position: 'relative', marginBottom: 10 }}>
+            <span style={{
+                position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)',
+                color: 'var(--charcoal-light)', fontSize: 15, pointerEvents: 'none',
+            }}>⌕</span>
+                            <input
+                                ref={inputRef}
+                                value={query}
+                                onChange={e => setQuery(e.target.value)}
+                                placeholder="Search recipes…"
+                                style={{
+                                    width: '100%', padding: mobile ? '11px 14px 11px 38px' : '13px 16px 13px 42px',
+                                    fontSize: 14, fontFamily: "'DM Sans', sans-serif",
+                                    background: 'white', border: '1.5px solid var(--cream-border)',
+                                    borderRadius: 10, outline: 'none', color: 'var(--charcoal)',
+                                    transition: 'border-color 0.15s',
+                                    boxShadow: '0 1px 4px oklch(0.18 0.01 60 / 0.04)',
+                                }}
+                                onFocus={e => e.target.style.borderColor = 'var(--terra)'}
+                                onBlur={e => e.target.style.borderColor = 'var(--cream-border)'}
+                            />
+                            {query && (
+                                <button onClick={() => setQuery('')} style={{
+                                    position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)',
+                                    background: 'var(--cream-dark)', border: 'none', cursor: 'pointer',
+                                    width: 22, height: 22, borderRadius: '50%',
+                                    color: 'var(--charcoal-light)', fontSize: 12,
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                }}>✕</button>
+                            )}
+                        </div>
+
+                        {/* Quick filters — scrollable strip on mobile */}
+                        <div className="filter-strip" style={{ flexWrap: mobile ? 'nowrap' : 'wrap', paddingBottom: mobile ? 4 : 0 }}>
+                            {!mobile && <span style={{ fontSize: 12, color: 'var(--charcoal-light)', flexShrink: 0, marginRight: 4 }}>Filter:</span>}
+                            {QUICK_FILTERS.map(f => {
+                                const active = activeFilters.includes(f);
+                                const s = tagStyle(f);
+                                return (
+                                    <button key={f} onClick={() => toggleFilter(f)} style={{
+                                        padding: '5px 12px', borderRadius: 20, fontSize: 12, fontWeight: 500,
+                                        border: active ? `1.5px solid ${s.dot}` : '1.5px solid var(--cream-border)',
+                                        background: active ? s.bg : 'white',
+                                        color: active ? 'var(--charcoal)' : 'var(--charcoal-mid)',
+                                        cursor: 'pointer', transition: 'all 0.15s',
+                                        fontFamily: "'DM Sans', sans-serif",
+                                        textTransform: 'capitalize', flexShrink: 0,
+                                    }}>{f}</button>
+                                );
+                            })}
+                            {activeFilters.length > 0 && (
+                                <button onClick={() => setActiveFilters([])} style={{
+                                    padding: '5px 12px', borderRadius: 20, fontSize: 12, flexShrink: 0,
+                                    border: '1.5px solid var(--cream-border)', background: 'transparent',
+                                    color: 'var(--charcoal-light)', cursor: 'pointer',
+                                    fontFamily: "'DM Sans', sans-serif",
+                                }}>✕ Clear</button>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Table */}
+                    <div style={{
+                        background: 'white',
+                        borderRadius: mobile ? 10 : 14,
+                        border: '1px solid var(--cream-border)',
+                        overflow: 'hidden',
+                        boxShadow: '0 2px 12px oklch(0.18 0.01 60 / 0.05)',
+                    }}>
+                        {/* Table header — hide on mobile */}
+                        {!mobile && (
+                            <div style={{
+                                display: 'grid', gridTemplateColumns: '1fr 200px 80px 90px',
+                                padding: '10px 20px',
+                                background: 'var(--cream)',
+                                borderBottom: '1px solid var(--cream-border)',
+                                fontSize: 11, fontWeight: 500, color: 'var(--charcoal-light)',
+                                textTransform: 'uppercase', letterSpacing: '0.08em',
+                            }}>
+                                <span>Recipe</span>
+                                <span>Tags</span>
+                                <span>Time</span>
+                                <span>Difficulty</span>
+                            </div>
+                        )}
+
+                        {/* Rows */}
+                        {filtered.length === 0 ? (
+                            <div style={{ padding: '48px 20px', textAlign: 'center', color: 'var(--charcoal-light)' }}>
+                                <div style={{ fontSize: 28, marginBottom: 10 }}>🍽</div>
+                                <p style={{ fontSize: 15, fontFamily: "'Playfair Display', serif", fontStyle: 'italic' }}>No recipes found</p>
+                                <p style={{ fontSize: 12, marginTop: 4 }}>Try a different search or clear your filters</p>
+                            </div>
+                        ) : (
+                            filtered.map((r, i) => (
+                                <RecipeRow
+                                    key={r.id}
+                                    recipe={r}
+                                    isLast={i === filtered.length - 1}
+                                    rowPad={rowPad}
+                                    mobile={mobile}
+                                    onClick={() => setSelected(r)}
+                                />
+                            ))
+                        )}
+                    </div>
+
+                    {filtered.length > 0 && (
+                        <p style={{ fontSize: 11, color: 'var(--charcoal-light)', marginTop: 12, textAlign: 'right' }}>
+                            {filtered.length} of {RECIPES.length} recipes
+                        </p>
+                    )}
+                </main>
+
+                {/* Modal */}
+                {selected && <Modal recipe={selected} onClose={() => setSelected(null)} />}
+
+                {/* Tweaks panel */}
+                {tweaksOpen && (
+                    <div style={{
+                        position: 'fixed', bottom: 20, right: 20, zIndex: 9999,
+                        background: 'white', borderRadius: 12, padding: 20,
+                        border: '1px solid var(--cream-border)',
+                        boxShadow: '0 8px 40px oklch(0.18 0.01 60 / 0.15)',
+                        width: 220, fontFamily: "'DM Sans', sans-serif",
+                    }}>
+                        <p style={{ fontSize: 12, fontWeight: 500, marginBottom: 14, color: 'var(--charcoal)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Tweaks</p>
+                        <label style={{ fontSize: 12, color: 'var(--charcoal-mid)', display: 'block', marginBottom: 6 }}>Row density</label>
+                        <div style={{ display: 'flex', gap: 6, marginBottom: 16 }}>
+                            {['compact', 'comfortable', 'spacious'].map(d => (
+                                <button key={d} onClick={() => setTweak('density', d)} style={{
+                                    flex: 1, padding: '5px 0', fontSize: 11, borderRadius: 6,
+                                    border: `1.5px solid ${tweaks.density === d ? 'var(--terra)' : 'var(--cream-border)'}`,
+                                    background: tweaks.density === d ? 'var(--terra-light)' : 'white',
+                                    cursor: 'pointer', color: 'var(--charcoal)', textTransform: 'capitalize',
+                                }}>{d}</button>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                <style>{`
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideUpMobile { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      `}</style>
+            </div>
+        );
+    }
+
+    function RecipeRow({ recipe, isLast, rowPad, mobile, onClick }) {
+        const [hovered, setHovered] = useState(false);
+
+        if (mobile) {
+            return (
+                <div
+                    onClick={onClick}
+                    style={{
+                        padding: '14px 14px',
+                        borderBottom: isLast ? 'none' : '1px solid var(--cream-dark)',
+                        cursor: 'pointer',
+                        background: hovered ? 'var(--cream)' : 'white',
+                        transition: 'background 0.12s',
+                        display: 'flex', flexDirection: 'column', gap: 6,
+                    }}
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                >
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
+                        <p style={{
+                            fontFamily: "'Playfair Display', serif",
+                            fontSize: 15, fontWeight: 600, lineHeight: 1.3,
+                            color: hovered ? 'var(--terra)' : 'var(--charcoal)',
+                            transition: 'color 0.12s',
+                        }}>{recipe.name}</p>
+                        <span style={{ fontSize: 11, color: 'var(--charcoal-light)', whiteSpace: 'nowrap', paddingTop: 2 }}>{recipe.time}</span>
+                    </div>
+                    <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                        {recipe.tags.slice(0, 3).map(t => <Tag key={t} label={t} />)}
+                    </div>
+                </div>
+            );
+        }
+
+        return (
+            <div
+                onClick={onClick}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                style={{
+                    display: 'grid', gridTemplateColumns: '1fr 200px 80px 90px',
+                    padding: rowPad,
+                    borderBottom: isLast ? 'none' : '1px solid var(--cream-dark)',
+                    cursor: 'pointer',
+                    background: hovered ? 'var(--cream)' : 'white',
+                    transition: 'background 0.12s',
+                    alignItems: 'center',
+                }}
+            >
+                <div>
+                    <p style={{
+                        fontFamily: "'Playfair Display', serif",
+                        fontSize: 16, fontWeight: 600,
+                        color: hovered ? 'var(--terra)' : 'var(--charcoal)',
+                        transition: 'color 0.12s', marginBottom: 2,
+                    }}>{recipe.name}</p>
+                    <p style={{ fontSize: 12, color: 'var(--charcoal-light)', lineHeight: 1.4 }}>
+                        {recipe.description.slice(0, 72)}{recipe.description.length > 72 ? '…' : ''}
+                    </p>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+                    {recipe.tags.slice(0, 3).map(t => <Tag key={t} label={t} />)}
+                </div>
+                <div style={{ fontSize: 13, color: 'var(--charcoal-light)' }}>{recipe.time}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <DifficultyDot level={recipe.difficulty} />
+                    <span style={{ fontSize: 12, color: 'var(--charcoal-light)' }}>{recipe.difficulty}</span>
+                </div>
+            </div>
+        );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

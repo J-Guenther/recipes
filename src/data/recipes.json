@@ -1,0 +1,339 @@
+[
+  {
+    "id": 1,
+    "name": "Spaghetti Carbonara",
+    "tags": ["pasta", "italian", "dairy"],
+    "time": "25 min",
+    "servings": 2,
+    "difficulty": "Medium",
+    "description": "A Roman classic — silky egg and pecorino sauce, guanciale, and a crack of black pepper.",
+    "ingredients": [
+      "200g spaghetti",
+      "100g guanciale (or pancetta), diced",
+      "2 large eggs + 2 yolks",
+      "60g Pecorino Romano, finely grated",
+      "30g Parmigiano Reggiano, finely grated",
+      "Freshly cracked black pepper",
+      "Salt, for pasta water"
+    ],
+    "steps": [
+      "Bring a large pot of generously salted water to a boil. Cook spaghetti until al dente — reserve 1 cup of pasta water before draining.",
+      "While pasta cooks, fry guanciale in a large skillet over medium heat until crispy and fat has rendered, about 6–8 minutes. Remove from heat.",
+      "Whisk eggs, yolks, pecorino, and parmigiano together in a bowl. Season heavily with black pepper.",
+      "Add drained pasta to the skillet with guanciale (off heat). Pour egg mixture over, tossing rapidly. Add pasta water splash by splash until sauce is creamy and clings to each strand.",
+      "Serve immediately, topped with more grated cheese and a generous grind of black pepper."
+    ],
+    "notes": "The key is temperature control — if the pan is too hot, the eggs will scramble. Let the pan cool for 30 seconds before adding the egg mixture.",
+    "source": null
+  },
+  {
+    "id": 2,
+    "name": "Pad Thai",
+    "tags": ["noodles", "seafood", "quick"],
+    "time": "20 min",
+    "servings": 2,
+    "difficulty": "Easy",
+    "description": "Thailand's beloved stir-fried noodle dish with shrimp, egg, bean sprouts, and a tangy tamarind sauce.",
+    "ingredients": [
+      "200g flat rice noodles",
+      "150g shrimp, peeled and deveined",
+      "2 eggs",
+      "3 tbsp tamarind paste",
+      "2 tbsp fish sauce",
+      "1 tbsp palm sugar",
+      "1 cup bean sprouts",
+      "3 green onions, sliced",
+      "2 tbsp roasted peanuts, crushed",
+      "2 tbsp vegetable oil",
+      "Lime wedges, to serve"
+    ],
+    "steps": [
+      "Soak rice noodles in warm water for 20 minutes until pliable but not fully cooked. Drain and set aside.",
+      "Mix tamarind paste, fish sauce, and palm sugar in a small bowl. Set aside.",
+      "Heat oil in a wok over high heat. Add shrimp and cook until pink, about 2 minutes. Push to the side.",
+      "Crack eggs into the wok and scramble, then fold into the shrimp.",
+      "Add noodles and sauce. Toss everything together vigorously for 2–3 minutes.",
+      "Add bean sprouts and green onions, toss once more. Serve immediately topped with crushed peanuts and a lime wedge."
+    ],
+    "notes": "Use a very hot wok — 'wok hei' (breath of the wok) is everything. Don't overcrowd the pan; cook in batches if needed.",
+    "source": "https://www.youtube.com/watch?v=example-padthai"
+  },
+  {
+    "id": 3,
+    "name": "Crispy Tofu Stir Fry",
+    "tags": ["tofu", "vegan", "quick"],
+    "time": "30 min",
+    "servings": 2,
+    "difficulty": "Easy",
+    "description": "Golden crispy tofu in a savory ginger-garlic sauce with seasonal vegetables.",
+    "ingredients": [
+      "400g firm tofu, pressed and cubed",
+      "2 tbsp cornstarch",
+      "3 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 tbsp rice vinegar",
+      "1 tsp sriracha",
+      "1 tbsp fresh ginger, grated",
+      "3 garlic cloves, minced",
+      "1 bell pepper, sliced",
+      "1 head broccoli, cut into florets",
+      "2 tbsp vegetable oil",
+      "Sesame seeds, to garnish"
+    ],
+    "steps": [
+      "Press tofu between towels for at least 15 minutes to remove excess moisture. Cut into 1-inch cubes and toss with cornstarch, salt, and pepper.",
+      "Heat oil in a large skillet over high heat. Add tofu in a single layer and cook undisturbed for 3–4 minutes per side until golden and crispy. Remove and set aside.",
+      "In the same skillet, sauté garlic and ginger for 1 minute until fragrant.",
+      "Add broccoli and bell pepper, stir-fry for 4–5 minutes until tender-crisp.",
+      "Mix soy sauce, sesame oil, rice vinegar, and sriracha. Pour over vegetables and toss.",
+      "Return tofu to the skillet, toss to coat. Garnish with sesame seeds. Serve over rice."
+    ],
+    "notes": "Pressing the tofu is non-negotiable for crispiness. For extra crunch, bake at 200°C for 25 minutes instead of pan-frying.",
+    "source": "https://www.youtube.com/watch?v=example-tofu"
+  },
+  {
+    "id": 4,
+    "name": "Miso Ramen",
+    "tags": ["soup", "japanese", "noodles"],
+    "time": "45 min",
+    "servings": 2,
+    "difficulty": "Medium",
+    "description": "A rich, deeply umami miso broth with ramen noodles, soft-boiled eggs, and toppings.",
+    "ingredients": [
+      "2 portions fresh ramen noodles",
+      "4 tbsp white miso paste",
+      "700ml dashi or chicken broth",
+      "200ml oat milk or whole milk",
+      "1 tbsp sesame paste (tahini)",
+      "1 tbsp soy sauce",
+      "1 tsp mirin",
+      "2 soft-boiled eggs, marinated",
+      "1 sheet nori, halved",
+      "2 green onions, sliced",
+      "Corn kernels and bamboo shoots, to top"
+    ],
+    "steps": [
+      "Marinate soft-boiled eggs: peel and soak in a mix of 3 tbsp soy sauce, 1 tbsp mirin, and water for at least 4 hours (overnight is best).",
+      "Heat broth in a pot until simmering. Whisk in miso paste until dissolved — do not boil once miso is added.",
+      "Stir in milk and sesame paste for richness. Season with soy sauce and mirin.",
+      "Cook ramen noodles according to package instructions. Drain and divide between two deep bowls.",
+      "Ladle hot miso broth over noodles. Arrange a halved marinated egg, nori, corn, bamboo shoots, and green onions on top."
+    ],
+    "notes": "Never boil miso — it destroys the delicate fermented flavors. Add it at the end off direct heat.",
+    "source": "https://www.youtube.com/watch?v=example-ramen"
+  },
+  {
+    "id": 5,
+    "name": "Matcha Latte",
+    "tags": ["drinks", "vegan"],
+    "time": "5 min",
+    "servings": 1,
+    "difficulty": "Easy",
+    "description": "A smooth, vibrant green tea latte with frothy oat milk — calming and energizing.",
+    "ingredients": [
+      "1.5 tsp ceremonial-grade matcha powder",
+      "60ml hot water (70–80°C, not boiling)",
+      "200ml oat milk",
+      "1 tsp honey or agave (optional)"
+    ],
+    "steps": [
+      "Sift matcha powder into a cup to remove lumps.",
+      "Add hot water and whisk vigorously in a W-shape motion until frothy and smooth (or use a small electric frother).",
+      "Heat oat milk and froth it using a steam wand, frother, or by shaking in a jar.",
+      "Pour matcha shot, then gently add frothy milk over the top. Sweeten if desired."
+    ],
+    "notes": "Quality of matcha matters enormously — ceremonial grade has a natural sweetness; culinary grade can be bitter. Serve over ice for an iced matcha latte.",
+    "source": null
+  },
+  {
+    "id": 6,
+    "name": "Classic Tiramisu",
+    "tags": ["dessert", "italian", "dairy"],
+    "time": "30 min + chill",
+    "servings": 6,
+    "difficulty": "Medium",
+    "description": "The iconic Italian dessert — espresso-soaked ladyfingers layered with mascarpone cream and dusted with cocoa.",
+    "ingredients": [
+      "300g ladyfinger biscuits (savoiardi)",
+      "500g mascarpone cheese",
+      "4 eggs, separated",
+      "100g caster sugar",
+      "300ml strong espresso, cooled",
+      "3 tbsp coffee liqueur (Kahlúa or Marsala)",
+      "Good quality cocoa powder, for dusting"
+    ],
+    "steps": [
+      "Beat egg yolks and sugar together until pale and doubled in volume, about 5 minutes. Fold in mascarpone gently.",
+      "In a separate bowl, whisk egg whites to stiff peaks. Carefully fold into the mascarpone mixture in three stages.",
+      "Mix cooled espresso and liqueur in a shallow dish.",
+      "Quickly dip each ladyfinger in the espresso (1–2 seconds per side — don't soak). Layer in a dish.",
+      "Spread half the mascarpone cream over the biscuit layer. Repeat with another layer of dipped biscuits and the remaining cream.",
+      "Cover and refrigerate for at least 4 hours (overnight is ideal). Dust generously with cocoa powder before serving."
+    ],
+    "notes": "Dipping the ladyfingers too long makes the dessert soggy. A quick dip on each side is all you need. Raw eggs can be avoided by using pasteurized eggs.",
+    "source": null
+  },
+  {
+    "id": 7,
+    "name": "Avocado Toast",
+    "tags": ["vegan", "quick"],
+    "time": "10 min",
+    "servings": 1,
+    "difficulty": "Easy",
+    "description": "Perfectly seasoned smashed avocado on crusty sourdough — elevated with chili flakes and a squeeze of lemon.",
+    "ingredients": [
+      "2 thick slices sourdough bread",
+      "1 ripe avocado",
+      "Juice of ½ lemon",
+      "Flaky sea salt",
+      "Chili flakes",
+      "Olive oil, to drizzle",
+      "Optional: cherry tomatoes, microgreens, or a poached egg"
+    ],
+    "steps": [
+      "Toast sourdough slices until golden and sturdy.",
+      "Halve the avocado, remove the pit, and scoop flesh into a bowl.",
+      "Add lemon juice and a pinch of salt. Mash with a fork to your preferred texture (chunky or smooth).",
+      "Spread generously onto toast. Drizzle with olive oil, sprinkle with flaky salt and chili flakes.",
+      "Add any optional toppings and serve immediately."
+    ],
+    "notes": "The avocado must be perfectly ripe — it should yield gently to pressure. A touch of everything bagel seasoning instead of plain salt is wonderful here.",
+    "source": null
+  },
+  {
+    "id": 8,
+    "name": "Greek Salad",
+    "tags": ["salad", "vegan", "quick"],
+    "time": "15 min",
+    "servings": 2,
+    "difficulty": "Easy",
+    "description": "A bright, satisfying salad of ripe tomatoes, cucumber, olives, red onion, and generous feta.",
+    "ingredients": [
+      "3 large ripe tomatoes, cut in chunks",
+      "1 cucumber, sliced",
+      "½ red onion, thinly sliced",
+      "100g Kalamata olives",
+      "200g good feta cheese, in a block",
+      "3 tbsp extra-virgin olive oil",
+      "1 tbsp red wine vinegar",
+      "Dried oregano",
+      "Salt and black pepper"
+    ],
+    "steps": [
+      "Combine tomatoes, cucumber, red onion, and olives in a large bowl. Season with salt.",
+      "Whisk together olive oil and red wine vinegar. Pour over the salad.",
+      "Place the feta block on top whole (traditional style) or crumble it over.",
+      "Crumble dried oregano generously over everything. A final drizzle of olive oil. Serve with crusty bread."
+    ],
+    "notes": "Never use pre-crumbled feta — a whole block has much better texture and flavor. The salad improves if left to sit for 10 minutes before serving.",
+    "source": null
+  },
+  {
+    "id": 9,
+    "name": "Tacos al Pastor",
+    "tags": ["meat", "mexican"],
+    "time": "40 min + marinate",
+    "servings": 4,
+    "difficulty": "Medium",
+    "description": "Marinated pork with pineapple, cilantro, and salsa on warm corn tortillas — a taqueria staple.",
+    "ingredients": [
+      "600g pork shoulder, thinly sliced",
+      "3 dried guajillo chiles, soaked and seeded",
+      "1 chipotle chile in adobo",
+      "½ cup pineapple juice",
+      "3 garlic cloves",
+      "1 tsp cumin",
+      "1 tsp oregano",
+      "2 tbsp apple cider vinegar",
+      "Salt",
+      "Small corn tortillas, warmed",
+      "Pineapple chunks, white onion, cilantro, lime — to serve"
+    ],
+    "steps": [
+      "Blend guajillo chiles, chipotle, pineapple juice, garlic, cumin, oregano, vinegar, and salt into a smooth marinade.",
+      "Coat pork slices thoroughly in marinade. Cover and refrigerate for at least 2 hours (overnight preferred).",
+      "Cook marinated pork in a very hot cast-iron skillet or grill in batches, 2–3 minutes per side, until charred at the edges.",
+      "Rest meat briefly, then chop into small pieces.",
+      "Serve in warm tortillas with pineapple, white onion, fresh cilantro, and a squeeze of lime."
+    ],
+    "notes": "If you have a gas stove, you can char the guajillo chiles briefly over the flame before soaking for deeper flavor.",
+    "source": "https://www.youtube.com/watch?v=example-tacos"
+  },
+  {
+    "id": 10,
+    "name": "Mushroom Risotto",
+    "tags": ["vegetarian", "italian", "dairy"],
+    "time": "40 min",
+    "servings": 2,
+    "difficulty": "Medium",
+    "description": "Creamy, earthy risotto with porcini, cremini, and parmesan — finished with butter for a glossy richness.",
+    "ingredients": [
+      "300g arborio rice",
+      "250g cremini mushrooms, sliced",
+      "15g dried porcini mushrooms",
+      "1 shallot, diced",
+      "2 garlic cloves, minced",
+      "150ml dry white wine",
+      "1L warm vegetable stock",
+      "50g butter (divided)",
+      "60g Parmigiano Reggiano, grated",
+      "Fresh thyme",
+      "Salt and pepper"
+    ],
+    "steps": [
+      "Rehydrate dried porcini in 200ml hot water for 15 minutes. Strain, reserving the soaking liquid (add it to your warm stock).",
+      "Melt half the butter in a wide pan over medium heat. Sauté shallot until soft, then add garlic and thyme.",
+      "Add arborio rice and toast for 2 minutes, stirring, until translucent at the edges. Pour in white wine and stir until absorbed.",
+      "Add warm stock one ladle at a time, stirring constantly and only adding more when each addition is fully absorbed. This takes about 18 minutes.",
+      "Meanwhile, sauté cremini and rehydrated porcini in a separate pan until golden.",
+      "When rice is al dente, fold in mushrooms, remaining butter, and parmigiano. Season, rest for 2 minutes, and serve."
+    ],
+    "notes": "Risotto waits for no one — have your guests seated before the final ladle. The porcini soaking liquid is liquid gold; don't skip it.",
+    "source": null
+  },
+  {
+    "id": 11,
+    "name": "Cold Brew Coffee",
+    "tags": ["drinks"],
+    "time": "5 min + 12h steep",
+    "servings": 4,
+    "difficulty": "Easy",
+    "description": "Smooth, low-acid cold brew concentrate — made overnight with coarsely ground coffee and cold water.",
+    "ingredients": [
+      "100g coarsely ground coffee",
+      "800ml cold filtered water"
+    ],
+    "steps": [
+      "Combine ground coffee and cold water in a large jar or pitcher. Stir gently to ensure all grounds are wet.",
+      "Cover and refrigerate for 12–16 hours.",
+      "Strain through a fine mesh sieve lined with a paper filter or cheesecloth. This may take 10–15 minutes — don't rush it.",
+      "The result is a concentrate. Dilute 1:1 with water or milk to serve. Serve over ice."
+    ],
+    "notes": "Coarseness of the grind matters — too fine and filtering will take forever and may make the brew bitter. Aim for a French press grind. The concentrate keeps in the fridge for up to 2 weeks.",
+    "source": null
+  },
+  {
+    "id": 12,
+    "name": "Banana Smoothie",
+    "tags": ["drinks", "vegan", "quick"],
+    "time": "5 min",
+    "servings": 1,
+    "difficulty": "Easy",
+    "description": "A thick, creamy smoothie with frozen banana, peanut butter, and oat milk — wholesome and filling.",
+    "ingredients": [
+      "2 frozen bananas, sliced",
+      "2 tbsp peanut butter",
+      "300ml oat milk",
+      "1 tbsp cacao powder (optional)",
+      "Pinch of cinnamon"
+    ],
+    "steps": [
+      "Add all ingredients to a blender.",
+      "Blend on high for 60 seconds until completely smooth and creamy.",
+      "Taste and adjust — more peanut butter for richness, more oat milk if too thick.",
+      "Pour into a glass and serve immediately."
+    ],
+    "notes": "Freezing ripe bananas (peel first, then freeze) is the trick — they create natural sweetness and a thick, ice-cream-like texture with no added sugar.",
+    "source": null
+  }
+]
