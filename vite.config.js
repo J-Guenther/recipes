@@ -20,7 +20,7 @@ export default defineConfig({
         theme_color: '#f5ede3',
         background_color: '#f5ede3',
         display: 'standalone',
-        start_url: '/recipes',
+        start_url: '/recipes/',
         icons: [
           {
             src: 'icon-192.svg',
