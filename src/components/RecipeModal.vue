@@ -5,10 +5,11 @@ import { useI18n } from '../i18n/index.js'
 
 const t = useI18n()
 
-defineProps({ recipe: Object })
+const props = defineProps({ recipe: Object })
 const emit = defineEmits(['close'])
 
 const isMobile = ref(window.innerWidth < 640)
+const copied = ref(false)
 
 function onResize() { isMobile.value = window.innerWidth < 640 }
 function onKeydown(e) { if (e.key === 'Escape') emit('close') }
@@ -28,6 +29,17 @@ onUnmounted(() => {
 function onOverlayClick(e) {
   if (e.target === e.currentTarget) emit('close')
 }
+
+async function shareRecipe() {
+  const url = `${window.location.origin}${import.meta.env.BASE_URL}recipe/${props.recipe.id}`
+  if (navigator.share) {
+    await navigator.share({ title: props.recipe.name, url })
+  } else {
+    await navigator.clipboard.writeText(url)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2000)
+  }
+}
 </script>
 
 <template>
@@ -36,7 +48,12 @@ function onOverlayClick(e) {
 
       <div class="sheet-header" :class="{ mobile: isMobile }">
         <div v-if="isMobile" class="drag-handle" />
-        <button class="close-btn" :class="{ mobile: isMobile }" @click="emit('close')">✕</button>
+        <div class="header-actions" :class="{ mobile: isMobile }">
+          <button class="action-btn" @click="shareRecipe">
+            {{ copied ? '✓' : '↗' }}
+          </button>
+          <button class="action-btn" @click="emit('close')">✕</button>
+        </div>
 
         <div class="tags-row">
           <Tag v-for="t in recipe.tags" :key="t" :label="t" />
@@ -144,10 +161,18 @@ function onOverlayClick(e) {
   margin: 0 auto 16px;
 }
 
-.close-btn {
+.header-actions {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  gap: 6px;
+}
+.header-actions.mobile {
+  top: 16px;
+  right: 16px;
+}
+.action-btn {
   background: var(--cream-dark);
   border: none;
   cursor: pointer;
@@ -158,15 +183,11 @@ function onOverlayClick(e) {
   align-items: center;
   justify-content: center;
   color: var(--charcoal-mid);
-  font-size: 16px;
+  font-size: 15px;
   transition: background 0.15s;
   font-family: 'DM Sans', sans-serif;
 }
-.close-btn.mobile {
-  top: 16px;
-  right: 16px;
-}
-.close-btn:hover {
+.action-btn:hover {
   background: var(--cream-border);
 }
 

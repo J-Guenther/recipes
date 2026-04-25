@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import RecipeRow from '../components/RecipeRow.vue'
 import RecipeModal from '../components/RecipeModal.vue'
 import recipes from '../data/recipes.json'
@@ -7,12 +8,26 @@ import { tagStyle } from '../data/tagColors.js'
 import { useI18n } from '../i18n/index.js'
 
 const t = useI18n()
+const route = useRoute()
+const router = useRouter()
 
 const QUICK_FILTERS = ['pasta', 'tofu', 'vegan', 'drinks', 'quick', 'soup', 'dessert', 'dip', 'salad']
 
 const query = ref('')
 const activeFilters = ref([])
 const selected = ref(null)
+
+watch(() => route.params.id, (id) => {
+  selected.value = id ? (recipes.find(r => r.id === Number(id)) ?? null) : null
+}, { immediate: true })
+
+function openRecipe(recipe) {
+  router.push({ name: 'recipe', params: { id: recipe.id } })
+}
+
+function closeModal() {
+  router.push({ name: 'home' })
+}
 
 function toggleFilter(f) {
   if (activeFilters.value.includes(f)) {
@@ -101,7 +116,7 @@ const filtered = computed(() => {
           :key="recipe.id"
           :recipe="recipe"
           :is-last="i === filtered.length - 1"
-          @click="selected = recipe"
+          @click="openRecipe(recipe)"
         />
       </div>
 
@@ -110,7 +125,7 @@ const filtered = computed(() => {
       </p>
     </main>
 
-    <RecipeModal v-if="selected" :recipe="selected" @close="selected = null" />
+    <RecipeModal v-if="selected" :recipe="selected" @close="closeModal" />
   </div>
 </template>
 
