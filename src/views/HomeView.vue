@@ -7,7 +7,7 @@ import { tagStyle } from '../data/tagColors.js'
 
 const router = useRouter()
 
-const QUICK_FILTERS = ['pasta', 'tofu', 'vegan', 'drinks', 'quick', 'soup', 'dessert', 'meat', 'salad']
+const QUICK_FILTERS = ['pasta', 'tofu', 'vegan', 'drinks', 'quick', 'soup', 'dessert', 'dip', 'salad']
 
 const query = ref('')
 const activeFilters = ref([])
