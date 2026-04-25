@@ -49,8 +49,11 @@ async function shareRecipe() {
       <div class="sheet-header" :class="{ mobile: isMobile }">
         <div v-if="isMobile" class="drag-handle" />
         <div class="header-actions" :class="{ mobile: isMobile }">
-          <button class="action-btn" @click="shareRecipe">
-            {{ copied ? '✓' : '↗' }}
+          <button class="action-btn" @click="shareRecipe" :title="t('share')">
+            <!-- checkmark when copied -->
+            <svg v-if="copied" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <!-- link icon -->
+            <svg v-else width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </button>
           <button class="action-btn" @click="emit('close')">✕</button>
         </div>
@@ -95,7 +98,8 @@ async function shareRecipe() {
 
         <div v-if="recipe.source" class="source-row">
           <a :href="recipe.source" target="_blank" rel="noreferrer" class="source-link">
-            <span>↗</span> {{ t('view_source') }}
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            {{ t('view_source') }}
           </a>
         </div>
       </div>
