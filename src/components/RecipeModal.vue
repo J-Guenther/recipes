@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import Tag from './Tag.vue'
+import { useI18n } from '../i18n/index.js'
+
+const t = useI18n()
 
 defineProps({ recipe: Object })
 const emit = defineEmits(['close'])
@@ -42,14 +45,14 @@ function onOverlayClick(e) {
         <p v-if="!isMobile" class="recipe-desc">{{ recipe.description }}</p>
         <div class="meta-row" :class="{ mobile: isMobile }">
           <span class="meta-item"><span class="meta-icon">⏱</span> {{ recipe.time }}</span>
-          <span class="meta-item"><span class="meta-icon">🍽</span> {{ recipe.servings }} srv</span>
+          <span class="meta-item"><span class="meta-icon">🍽</span> {{ recipe.servings }} {{ t('servings_unit') }}</span>
           <span class="meta-item"><span class="meta-icon">●</span> {{ recipe.difficulty }}</span>
         </div>
       </div>
 
       <div class="sheet-body" :class="{ mobile: isMobile }">
         <section class="section">
-          <h3 class="section-title"><span class="section-bar" />Ingredients</h3>
+          <h3 class="section-title"><span class="section-bar" />{{ t('ingredients') }}</h3>
           <div class="ingredients-grid" :class="{ mobile: isMobile }">
             <div v-for="(ing, i) in recipe.ingredients" :key="i" class="ingredient-row">
               <span class="ingredient-dot">◆</span>{{ ing }}
@@ -58,7 +61,7 @@ function onOverlayClick(e) {
         </section>
 
         <section class="section">
-          <h3 class="section-title"><span class="section-bar" />Method</h3>
+          <h3 class="section-title"><span class="section-bar" />{{ t('method') }}</h3>
           <ol class="steps-list">
             <li v-for="(step, i) in recipe.steps" :key="i" class="step-item">
               <span class="step-num">{{ i + 1 }}</span>
@@ -69,14 +72,14 @@ function onOverlayClick(e) {
 
         <section v-if="recipe.notes" class="section" :class="{ 'no-margin': !recipe.source }">
           <div class="note-box">
-            <p class="note-label">Note</p>
+            <p class="note-label">{{ t('note') }}</p>
             <p class="note-text">{{ recipe.notes }}</p>
           </div>
         </section>
 
         <div v-if="recipe.source" class="source-row">
           <a :href="recipe.source" target="_blank" rel="noreferrer" class="source-link">
-            <span>↗</span> View Source
+            <span>↗</span> {{ t('view_source') }}
           </a>
         </div>
       </div>

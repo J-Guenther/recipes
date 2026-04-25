@@ -1,0 +1,20 @@
+{
+  "title": "Rezepte",
+  "dishes": "Gerichte",
+  "subtitle": "Persönliches Kochbuch",
+  "search_placeholder": "Rezepte suchen…",
+  "filter_label": "Filter:",
+  "clear_filters": "✕ Zurücksetzen",
+  "no_recipes_title": "Keine Rezepte gefunden",
+  "no_recipes_sub": "Andere Suche versuchen oder Filter zurücksetzen",
+  "result_count": "{n} von {total} Rezepten",
+  "col_recipe": "Rezept",
+  "col_tags": "Tags",
+  "col_time": "Zeit",
+  "col_difficulty": "Schwierigkeit",
+  "ingredients": "Zutaten",
+  "method": "Zubereitung",
+  "note": "Hinweis",
+  "view_source": "Quelle ansehen",
+  "servings_unit": "Port."
+}

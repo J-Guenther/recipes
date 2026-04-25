@@ -4,6 +4,9 @@ import RecipeRow from '../components/RecipeRow.vue'
 import RecipeModal from '../components/RecipeModal.vue'
 import recipes from '../data/recipes.json'
 import { tagStyle } from '../data/tagColors.js'
+import { useI18n } from '../i18n/index.js'
+
+const t = useI18n()
 
 const QUICK_FILTERS = ['pasta', 'tofu', 'vegan', 'drinks', 'quick', 'soup', 'dessert', 'dip', 'salad']
 
@@ -33,12 +36,12 @@ const filtered = computed(() => {
   <div class="page">
     <header class="header">
       <div class="header-title">
-        <span class="title-text">Recipes</span>
-        <span class="title-count">{{ recipes.length }} dishes</span>
+        <span class="title-text">{{ t('title') }}</span>
+        <span class="title-count">{{ recipes.length }} {{ t('dishes') }}</span>
       </div>
       <div class="header-sub">
         <span class="accent-dot" />
-        Personal cookbook
+        {{ t('subtitle') }}
       </div>
     </header>
 
@@ -49,14 +52,14 @@ const filtered = computed(() => {
           <span class="search-icon">⌕</span>
           <input
             v-model="query"
-            placeholder="Search recipes…"
+            :placeholder="t('search_placeholder')"
             class="search-input"
           />
           <button v-if="query" class="clear-btn" @click="query = ''">✕</button>
         </div>
 
         <div class="filter-strip">
-          <span class="filter-label">Filter:</span>
+          <span class="filter-label">{{ t('filter_label') }}</span>
           <button
             v-for="f in QUICK_FILTERS"
             :key="f"
@@ -71,7 +74,7 @@ const filtered = computed(() => {
             v-if="activeFilters.length > 0"
             class="filter-btn clear-filter"
             @click="activeFilters = []"
-          >✕ Clear</button>
+          >{{ t('clear_filters') }}</button>
         </div>
       </div>
 
@@ -79,17 +82,17 @@ const filtered = computed(() => {
       <div class="table-wrap">
         <!-- Desktop header -->
         <div class="table-header">
-          <span>Recipe</span>
-          <span>Tags</span>
-          <span>Time</span>
-          <span>Difficulty</span>
+          <span>{{ t('col_recipe') }}</span>
+          <span>{{ t('col_tags') }}</span>
+          <span>{{ t('col_time') }}</span>
+          <span>{{ t('col_difficulty') }}</span>
         </div>
 
         <!-- Empty state -->
         <div v-if="filtered.length === 0" class="empty">
           <div class="empty-icon">🍽</div>
-          <p class="empty-title">No recipes found</p>
-          <p class="empty-sub">Try a different search or clear your filters</p>
+          <p class="empty-title">{{ t('no_recipes_title') }}</p>
+          <p class="empty-sub">{{ t('no_recipes_sub') }}</p>
         </div>
 
         <!-- Rows -->
@@ -104,7 +107,7 @@ const filtered = computed(() => {
       </div>
 
       <p v-if="filtered.length > 0" class="result-count">
-        {{ filtered.length }} of {{ recipes.length }} recipes
+        {{ t('result_count', { n: filtered.length, total: recipes.length }) }}
       </p>
     </main>
 
