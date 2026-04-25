@@ -2,8 +2,10 @@
   {
     "id": 1,
     "name": "Hummus",
-    "tags": ["vegan", "dip"],
-    "time": "10 min",
+    "tags": [
+      "vegan",
+      "dip"
+    ],
     "servings": 4,
     "difficulty": "Easy",
     "description": "Cremiger Hummus mit Tahini, Zitrone und Kreuzkümmel.",
@@ -29,8 +31,10 @@
   {
     "id": 2,
     "name": "Marcos Kichererbsen-Burger",
-    "tags": ["vegan", "quick"],
-    "time": "20 min",
+    "tags": [
+      "vegan",
+      "quick"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Einfache Kichererbsen-Buletten mit Provence-Kräutern — reicht für genau 2.",
@@ -59,8 +63,10 @@
   {
     "id": 3,
     "name": "Teriyaki Tofu",
-    "tags": ["vegan", "tofu"],
-    "time": "25 min",
+    "tags": [
+      "vegan",
+      "tofu"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Knuspriger Tofu in selbstgemachter Teriyaki-Sauce mit Ingwer und Sesamöl.",
@@ -98,8 +104,9 @@
   {
     "id": 4,
     "name": "Buddy Topf",
-    "tags": ["meat"],
-    "time": "90 min",
+    "tags": [
+      "meat"
+    ],
     "servings": 8,
     "difficulty": "Hard",
     "description": "Herzhafter Eintopf mit drei Bohnensorten, Rinderhack, Cabanossi und frischem Parmesan.",
@@ -139,8 +146,10 @@
   {
     "id": 5,
     "name": "Pasta mit weißem Pesto",
-    "tags": ["vegetarian", "pasta"],
-    "time": "20 min",
+    "tags": [
+      "vegetarian",
+      "pasta"
+    ],
     "servings": 4,
     "difficulty": "Easy",
     "description": "Spaghetti mit cremigem Walnuss-Ricotta-Pesto und Zitronenschale.",
@@ -180,8 +189,10 @@
   {
     "id": 6,
     "name": "Thai-Curry mit Tofu",
-    "tags": ["vegan", "tofu"],
-    "time": "30 min",
+    "tags": [
+      "vegan",
+      "tofu"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Rotes Thai-Curry mit knusprigem Tofu, Brokkoli, Paprika und Kokosmilch.",
@@ -216,8 +227,9 @@
   {
     "id": 7,
     "name": "Kichererbsen-Curry",
-    "tags": ["vegan"],
-    "time": "25 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Simples Kichererbsen-Curry mit passierten Tomaten, Kokosmilch und Limette.",
@@ -255,8 +267,10 @@
   {
     "id": 8,
     "name": "Wassermelonen-Feta-Salat",
-    "tags": ["vegetarian", "salad"],
-    "time": "15 min",
+    "tags": [
+      "vegetarian",
+      "salad"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Erfrischender Sommersalat mit Wassermelone, Feta und einem Honig-Balsamico-Dressing.",
@@ -292,8 +306,9 @@
   {
     "id": 9,
     "name": "Kichererbsen-Curry 2",
-    "tags": ["vegan"],
-    "time": "30 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Würziges Kichererbsen-Curry mit Thymian, Garam Masala und Kokosmilch.",
@@ -336,8 +351,10 @@
   {
     "id": 10,
     "name": "Lemon Tahini Pasta",
-    "tags": ["vegan", "pasta"],
-    "time": "20 min",
+    "tags": [
+      "vegan",
+      "pasta"
+    ],
     "servings": 3,
     "difficulty": "Easy",
     "description": "Cremige Spaghetti mit Tahini-Zitronen-Sauce, Kichererbsen und frischen Kräutern.",
@@ -364,8 +381,10 @@
   {
     "id": 11,
     "name": "Spaghetti al Pomodoro",
-    "tags": ["vegan", "pasta"],
-    "time": "30 min",
+    "tags": [
+      "vegan",
+      "pasta"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Klassische Tomatensauce mit Cherrytomaten, frischem Basilikum und gutem Olivenöl.",
@@ -402,8 +421,9 @@
   {
     "id": 12,
     "name": "Biryani Reis",
-    "tags": ["vegan"],
-    "time": "50 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 2,
     "difficulty": "Hard",
     "description": "Aromatischer Biryani-Reis mit selbstgemachter Gewürzpaste, Rosinen und Joghurt-Minze.",
@@ -459,8 +479,9 @@
   {
     "id": 13,
     "name": "Schupfnudeln mit Rucolapesto",
-    "tags": ["vegetarian"],
-    "time": "20 min",
+    "tags": [
+      "vegetarian"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Gebratene Schupfnudeln mit würzigem Walnuss-Rucola-Pesto und Kirschtomaten.",
@@ -498,8 +519,10 @@
   {
     "id": 14,
     "name": "Umami Mac'n'Cheese",
-    "tags": ["vegan", "pasta"],
-    "time": "35 min",
+    "tags": [
+      "vegan",
+      "pasta"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Veganes One-Pot Mac'n'Cheese mit Tofu-Hackfleisch, Rotwein und pflanzlichem Käse.",
@@ -544,8 +567,9 @@
   {
     "id": 15,
     "name": "Kürbis-Curry",
-    "tags": ["vegan"],
-    "time": "40 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Cremiges Hokkaido-Curry mit Erdnussmus, roter Currypaste und Kokosmilch.",
@@ -581,8 +605,10 @@
   {
     "id": 16,
     "name": "Erdnuss-Nudeln",
-    "tags": ["vegan", "pasta"],
-    "time": "20 min",
+    "tags": [
+      "vegan",
+      "pasta"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Udon-Nudeln in cremiger Erdnuss-Sojasauce mit Chiliöl und geröstetem Sesam.",
@@ -618,8 +644,9 @@
   {
     "id": 17,
     "name": "Bruschetta",
-    "tags": ["vegetarian"],
-    "time": "20 min",
+    "tags": [
+      "vegetarian"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Geröstetes Ciabatta mit angebratenen Cherrytomaten, Ricotta und Basilikum.",
@@ -655,8 +682,10 @@
   {
     "id": 18,
     "name": "Kartoffelsuppe mit Kokos",
-    "tags": ["vegan", "soup"],
-    "time": "40 min",
+    "tags": [
+      "vegan",
+      "soup"
+    ],
     "servings": 3,
     "difficulty": "Medium",
     "description": "Pürierte Kartoffel-Karotten-Suppe mit Kokosmilch, Miso und Bockshornklee.",
@@ -696,8 +725,9 @@
   {
     "id": 19,
     "name": "Marcos Couscous-Mann Meal",
-    "tags": ["vegetarian"],
-    "time": "25 min",
+    "tags": [
+      "vegetarian"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Couscous mit Kidneybohnen, Cherrytomaten, Paprika, Möhren und geschmolzenem Feta.",
@@ -728,8 +758,9 @@
   {
     "id": 20,
     "name": "Plant-based Köttbullar",
-    "tags": ["vegan"],
-    "time": "45 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 3,
     "difficulty": "Medium",
     "description": "Vegane schwedische Bällchen aus Natur- und Räuchertofu mit cremiger Bratensoße.",
@@ -771,8 +802,10 @@
   {
     "id": 21,
     "name": "One-Pot Gnocchi",
-    "tags": ["vegan", "quick"],
-    "time": "20 min",
+    "tags": [
+      "vegan",
+      "quick"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Gnocchi in cremiger Tomatensauce mit getrockneten Tomaten — alles in einem Topf.",
@@ -802,8 +835,9 @@
   {
     "id": 22,
     "name": "Kichererbsensalat-Sandwich",
-    "tags": ["vegan"],
-    "time": "15 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 2,
     "difficulty": "Easy",
     "description": "Baguette belegt mit zermatschen Kichererbsen, veganem Mayo-Dressing und frischem Salat.",
@@ -845,8 +879,10 @@
   {
     "id": 23,
     "name": "Crunchy Kartoffelsalat",
-    "tags": ["vegan", "salad"],
-    "time": "40 min",
+    "tags": [
+      "vegan",
+      "salad"
+    ],
     "servings": 4,
     "difficulty": "Easy",
     "description": "Im Ofen geröstete, zerquetschte Kartoffeln mit knackigem Gemüse und Joghurt-Dressing.",
@@ -878,8 +914,10 @@
   {
     "id": 24,
     "name": "Miso-Kokos Ramen",
-    "tags": ["vegan", "soup"],
-    "time": "30 min",
+    "tags": [
+      "vegan",
+      "soup"
+    ],
     "servings": 2,
     "difficulty": "Medium",
     "description": "Würzige Ramen-Brühe mit Miso, Kokosmilch, Zuckerschoten und knusprigem Tofu.",
@@ -913,8 +951,9 @@
   {
     "id": 25,
     "name": "Geiles Chili Sin Carne",
-    "tags": ["vegan"],
-    "time": "35 min",
+    "tags": [
+      "vegan"
+    ],
     "servings": 3,
     "difficulty": "Medium",
     "description": "Veganes Chili mit Tofu-Hack, Kidneybohnen, Mais, Paprika und rauchigen Gewürzen.",

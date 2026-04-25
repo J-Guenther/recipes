@@ -84,7 +84,6 @@ const filtered = computed(() => {
         <div class="table-header">
           <span>{{ t('col_recipe') }}</span>
           <span>{{ t('col_tags') }}</span>
-          <span>{{ t('col_time') }}</span>
           <span>{{ t('col_difficulty') }}</span>
         </div>
 
@@ -339,7 +338,7 @@ const filtered = computed(() => {
   }
   .table-header {
     display: grid;
-    grid-template-columns: 1fr 200px 80px 90px;
+    grid-template-columns: 1fr 200px 90px;
     padding: 10px 20px;
     background: var(--cream);
     border-bottom: 1px solid var(--cream-border);

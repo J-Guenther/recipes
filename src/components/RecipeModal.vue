@@ -44,7 +44,6 @@ function onOverlayClick(e) {
         <h2 class="recipe-title" :class="{ mobile: isMobile }">{{ recipe.name }}</h2>
         <p v-if="!isMobile" class="recipe-desc">{{ recipe.description }}</p>
         <div class="meta-row" :class="{ mobile: isMobile }">
-          <span class="meta-item"><span class="meta-icon">⏱</span> {{ recipe.time }}</span>
           <span class="meta-item"><span class="meta-icon">🍽</span> {{ recipe.servings }} {{ t('servings_unit') }}</span>
           <span class="meta-item"><span class="meta-icon">●</span> {{ recipe.difficulty }}</span>
         </div>

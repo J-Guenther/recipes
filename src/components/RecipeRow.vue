@@ -24,7 +24,6 @@ const hovered = ref(false)
   >
     <div class="row-mobile-top">
       <p class="recipe-name" :class="{ 'name-hovered': hovered }">{{ recipe.name }}</p>
-      <span class="time-label">{{ recipe.time }}</span>
     </div>
     <div class="tags-row">
       <Tag v-for="t in recipe.tags.slice(0, 3)" :key="t" :label="t" />
@@ -48,7 +47,6 @@ const hovered = ref(false)
     <div class="tags-row">
       <Tag v-for="t in recipe.tags.slice(0, 3)" :key="t" :label="t" />
     </div>
-    <div class="time-cell">{{ recipe.time }}</div>
     <div class="difficulty-cell">
       <DifficultyDot :level="recipe.difficulty" />
       <span class="difficulty-label">{{ recipe.difficulty }}</span>
@@ -88,13 +86,6 @@ const hovered = ref(false)
   gap: 8px;
 }
 
-.time-label {
-  font-size: 11px;
-  color: var(--charcoal-light);
-  white-space: nowrap;
-  padding-top: 2px;
-}
-
 .tags-row {
   display: flex;
   flex-wrap: wrap;
@@ -120,7 +111,7 @@ const hovered = ref(false)
   }
   .row-desktop {
     display: grid;
-    grid-template-columns: 1fr 200px 80px 90px;
+    grid-template-columns: 1fr 200px 90px;
     padding: 18px 20px;
     border-bottom: 1px solid var(--cream-dark);
     align-items: center;
@@ -133,10 +124,6 @@ const hovered = ref(false)
     font-size: 12px;
     color: var(--charcoal-light);
     line-height: 1.4;
-  }
-  .time-cell {
-    font-size: 13px;
-    color: var(--charcoal-light);
   }
   .difficulty-cell {
     display: flex;
