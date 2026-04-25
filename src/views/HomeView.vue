@@ -1,16 +1,15 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
 import RecipeRow from '../components/RecipeRow.vue'
+import RecipeModal from '../components/RecipeModal.vue'
 import recipes from '../data/recipes.json'
 import { tagStyle } from '../data/tagColors.js'
-
-const router = useRouter()
 
 const QUICK_FILTERS = ['pasta', 'tofu', 'vegan', 'drinks', 'quick', 'soup', 'dessert', 'dip', 'salad']
 
 const query = ref('')
 const activeFilters = ref([])
+const selected = ref(null)
 
 function toggleFilter(f) {
   if (activeFilters.value.includes(f)) {
@@ -20,7 +19,6 @@ function toggleFilter(f) {
   }
 }
 
-
 const filtered = computed(() => {
   const q = query.value.toLowerCase().trim()
   return recipes.filter(r => {
@@ -29,10 +27,6 @@ const filtered = computed(() => {
     return matchQuery && matchFilters
   })
 })
-
-function goToRecipe(recipe) {
-  router.push({ name: 'recipe', params: { id: recipe.id } })
-}
 </script>
 
 <template>
@@ -105,7 +99,7 @@ function goToRecipe(recipe) {
           :key="recipe.id"
           :recipe="recipe"
           :is-last="i === filtered.length - 1"
-          @click="goToRecipe(recipe)"
+          @click="selected = recipe"
         />
       </div>
 
@@ -113,6 +107,8 @@ function goToRecipe(recipe) {
         {{ filtered.length }} of {{ recipes.length }} recipes
       </p>
     </main>
+
+    <RecipeModal v-if="selected" :recipe="selected" @close="selected = null" />
   </div>
 </template>
 
